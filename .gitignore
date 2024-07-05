@@ -14,3 +14,6 @@ build/
 # Data
 /data/raw/*
 /data/processed/*
+
+#Carpeta Documentación y todo su contenido
+Documentación/
