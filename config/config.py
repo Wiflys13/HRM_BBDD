@@ -6,7 +6,6 @@ Created on Fri Jul  5 13:06:58 2024
 
 #Cada vez que se ejecuta salta: Reloaded modules
 """
-
 # config/config.py
 import os
 
@@ -16,18 +15,19 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Definir la ruta al archivo CSV
 DATA_FILE_PATH = os.path.join(BASE_DIR, 'data')
 
+# Configuración de la base de datos
+DB_CONFIG = {
+    'host': 'localhost',
+    'user': 'harmoni_user',
+    'password': 'harmoni',
+    'database': 'harmoni_db'
+}
 
 """
 import logging
 # Definir la ruta para los logs
 LOG_FILE_PATH = os.path.join(BASE_DIR, 'logs', 'app.log')
 
-# Definir una configuración de base de datos
-DB_HOST = 'localhost'
-DB_PORT = 5432
-DB_USER = 'usuario'
-DB_PASSWORD = 'contraseña'
-DB_NAME = 'base_de_datos'
 
 # Definir la URL de una API externa
 API_URL = 'https://api.example.com/endpoint'
