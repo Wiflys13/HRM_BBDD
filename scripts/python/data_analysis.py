@@ -32,7 +32,7 @@ except Exception as e:
     raise
     
 # Crear una matriz booleana de valores nulos
-null_matrix = data_PBS.isnull()
+null_matrix = data_Electric.isnull()
 
 # Configurar la visualización de la matriz de valores nulos con colores
 plt.figure(figsize=(10, 6))
