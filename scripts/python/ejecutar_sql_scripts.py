@@ -8,7 +8,7 @@ sys.path.append(project_root)
 from config.config import DB_CONFIG
 
 # Función para ejecutar un archivo SQL
-def execute_sql_script(file_path):
+def execute_create_tables(file_path):
     with open(file_path, 'r') as file:
         sql_script = file.read()
     
@@ -32,13 +32,19 @@ def execute_sql_script(file_path):
             connection.close()
             print("MySQL connection is closed")
 
+
+
+sql_script = os.path.join(os.path.dirname(__file__), '..', 'sql', 'create_tables.sql')
+execute_create_tables(sql_script)
+
+""" Si tenemos varios a la vez
 # Ruta a los scripts SQL
 sql_scripts = [
     os.path.join(os.path.dirname(__file__), '..', 'sql', 'create_tables.sql'),
     os.path.join(os.path.dirname(__file__), '..', 'sql', 'insert_data.sql'),
     os.path.join(os.path.dirname(__file__), '..', 'sql', 'query_data.sql')
 ]
-
 # Ejecutar los scripts SQL
 for script in sql_scripts:
     execute_sql_script(script)
+"""
