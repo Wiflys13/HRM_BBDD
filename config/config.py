@@ -15,13 +15,25 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Definir la ruta al archivo CSV
 DATA_FILE_PATH = os.path.join(BASE_DIR, 'data')
 
-# Configuración de la base de datos
+# Configuración de la base de datos mysql
 DB_CONFIG = {
     'host': 'localhost',
     'user': 'harmoni_user',
     'password': 'harmoni',
     'database': 'harmoni_db'
 }
+
+# Configuracion de la base de datos mongodb
+MONGODB_URI = 'mongodb+srv://guillermomercant:Harmoni.2024@harmoni.on2fogi.mongodb.net/'
+MONGODB_DB_NAME = 'harmoni_db'
+MONGODB_COLLECTION_NAME = 'components'
+
+
+# Configuración de la base de datos mongodb local
+MONGODB_URI_local = 'mongodb://localhost:27017/'
+MONGODB_DB_NAME_local = 'harmoni_db'
+MONGODB_COLLECTION_NAME_local = 'components'
+
 
 """
 import logging
