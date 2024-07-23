@@ -18,3 +18,6 @@ build/
 
 #Carpeta Documentación y todo su contenido
 Documentacion/
+
+#Config
+/config/config.py

@@ -6,6 +6,7 @@ Created on Fri Jul  5 13:06:58 2024
 
 #Cada vez que se ejecuta salta: Reloaded modules
 """
+## Modificar passwords 
 # config/config.py
 import os
 
