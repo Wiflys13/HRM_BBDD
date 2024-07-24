@@ -15,6 +15,7 @@ build/
 /data/*
 /data/raw/*
 /data/processed/*
+/notebooks/data_reduction.ipynb
 
 # Carpeta Documentación y todo su contenido
 Documentacion/
