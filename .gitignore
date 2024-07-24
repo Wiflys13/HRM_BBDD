@@ -16,8 +16,8 @@ build/
 /data/raw/*
 /data/processed/*
 
-#Carpeta Documentación y todo su contenido
+# Carpeta Documentación y todo su contenido
 Documentacion/
 
-#Config
+# Config
 /config/config.py
