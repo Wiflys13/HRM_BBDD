@@ -11,8 +11,11 @@ El objetivo es preparar los datos para su análisis y carga en herramientas como
 ## Pasos de Preprocesamiento
 
 1. **Lectura del Archivo CSV**
-Se cargan los ficheros de .csv para su tratamiento con python
+Se cargan los ficheros de .csv para su tratamiento con python en un DataFrame de pandas
+
   ```python
   import pandas as pd
+  ```
 
-2. **Unificacion de 
+2. **Unificacion de formato** 
+Se le tiene que asignar el mismo formato a cada uno de los datos para poder realizar la unificacion de la base de datos de forma homogenea
