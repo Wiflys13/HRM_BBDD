@@ -1,3 +1,5 @@
+## components.py
+
 from fastapi import APIRouter, HTTPException, status
 from API.db.models.components import components
 from API.db.schemas.components import components_schema
