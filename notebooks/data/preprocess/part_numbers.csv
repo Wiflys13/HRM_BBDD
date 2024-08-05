@@ -1,0 +1,557 @@
+ci_identification,item_name,acronym,level,system,subsystem,module,unit,assembly,subassembly,component,notes_and_comments
+300000-0000,Calibration and Relay Systems,CARS,1,3,0,0,0,0,0,0,CARS
+310000-0000,Calibration module,CM,2,3,1,0,0,0,0,0,CM
+311000-0000,,nan,3,3,1,1,0,0,0,0,nan
+312000-0000,,nan,3,3,1,2,0,0,0,0,nan
+313000-0000,,nan,3,3,1,3,0,0,0,0,nan
+314000-0000,,nan,3,3,1,4,0,0,0,0,nan
+315000-0000,IFS Calibration Unit,ICU,3,3,1,5,0,0,0,0,ICU
+315100-0000,ICU Uniform Source Assembly,IUSA,4,3,1,5,1,0,0,0,IUSA
+315110-0000,ICU Integrating Sphere,CM IIS,5,3,1,5,1,1,0,0,CM IIS
+315111-0000,ICU Integrating sphere structure,CM IISS,6,3,1,5,1,1,1,0,CM IISS
+315111-0001,ICU Integrating sphere temperature sensor,CM ISTS,7,3,1,5,1,1,1,1,CM ISTS
+315112-0000,Integrating sphere detector,CM ISD,6,3,1,5,1,1,2,0,CM ISD
+315113-0000,Variable Attenuator Ar,CM VA Ar,6,3,1,5,1,1,3,0,CM VA Ar
+315113-0001,Variable Attenuator Iris Ar,CM VAI Ar,7,3,1,5,1,1,3,1,CM VAI Ar
+315113-0002,Variable Attenuator Stepper Motor Ar,CM VAM Ar,7,3,1,5,1,1,3,2,CM VAM Ar
+315113-0003,Variable Attenuator Encoder Ar,CM VAE Ar,7,3,1,5,1,1,3,3,CM VAE Ar
+315114-0000,Variable Attenuator Xe,CM VA Xe,6,3,1,5,1,1,4,0,CM VA Xe
+315114-0001,Variable Attenuator Iris Xe,CM VAI Xe,7,3,1,5,1,1,4,1,CM VAI Xe
+315114-0002,Variable Attenuator Stepper Motor Xe,CM VAM Xe,7,3,1,5,1,1,4,2,CM VAM Xe
+315114-0003,Variable Attenuator Encoder Xe,CM VAE Xe,7,3,1,5,1,1,4,3,CM VAE Xe
+315115-0000,Variable Attenuator Kr,CM VA Kr,6,3,1,5,1,1,5,0,CM VA Kr
+315115-0001,Variable Attenuator Iris Kr,CM VAI Kr,7,3,1,5,1,1,5,1,CM VAI Kr
+315115-0002,Variable Attenuator Stepper Motor Kr,CM VAM Kr,7,3,1,5,1,1,5,2,CM VAM Kr
+315115-0003,Variable Attenuator Encoder Kr,CM VAE Kr,7,3,1,5,1,1,5,3,CM VAE Kr
+315116-0000,Variable Attenuator Ne,CM VA Ne,6,3,1,5,1,1,6,0,CM VA Ne
+315116-0001,Variable Attenuator Iris Ne,CM VAI Ne,7,3,1,5,1,1,6,1,CM VAI Ne
+315116-0002,Variable Attenuator Stepper Motor Ne,CM VAM Ne,7,3,1,5,1,1,6,2,CM VAM Ne
+315116-0003,Variable Attenuator Encoder Ne,CM VAE Ne,7,3,1,5,1,1,6,3,CM VAE Ne
+315117-0000,Variable Attenuator QTH,CM VA Q,6,3,1,5,1,1,7,0,CM VA Q
+315117-0001,Variable Attenuator Iris QTH,CM VAI Q,7,3,1,5,1,1,7,1,CM VAI Q
+315117-0002,Variable Attenuator Stepper Motor QTH,CM VAM Q,7,3,1,5,1,1,7,2,CM VAM Q
+315117-0003,Variable Attenuator Encoder QTH,CM VAE Q,7,3,1,5,1,1,7,3,CM VAE Q
+315120-0000,IFS Light Sources,CM ILS,5,3,1,5,1,2,0,0,CM ILS
+315121-0000,Discrete Lamps,CM DL,6,3,1,5,1,2,1,0,CM DL
+315121-0001,Ar lamp,CM LAr,7,3,1,5,1,2,1,1,CM LAr
+315121-0002,Kr lamp,CM LKr,7,3,1,5,1,2,1,2,CM LKr
+315121-0003,Ne lamp,CM LNe,7,3,1,5,1,2,1,3,CM LNe
+315121-0004,Xe lamp,CM LXe,7,3,1,5,1,2,1,4,CM LXe
+315121-0005,Ar lamp photodiode,CM LAr Ph,7,3,1,5,1,2,1,5,CM LAr Ph
+315121-0006,Kr lamp photodiode,CM LKr Ph,7,3,1,5,1,2,1,6,CM LKr Ph
+315121-0007,Ne lamp photodiode,CM LNe Ph,7,3,1,5,1,2,1,7,CM LNe Ph
+315121-0008,Xe lamp photodiode,CM Lxe Ph,7,3,1,5,1,2,1,8,CM Lxe Ph
+315122-0000,Continuum Lamps,CM CL,6,3,1,5,1,2,2,0,CM CL
+315122-0001,Continuum Lamp,CM LQTH,7,3,1,5,1,2,2,1,CM LQTH
+315122-0002,Continuum Lamp Photodiode,CM LQTH Ph,7,3,1,5,1,2,2,2,CM LQTH Ph
+315123-0000,Satellite Lamps Support,CM SLS,6,3,1,5,1,2,3,0,CM SLS
+315123-0001,Injection mirrors discrete lamp Ar,CM SIM Ar,7,3,1,5,1,2,3,1,CM SIM Ar
+315123-0002,Injection mirrors discrete lamp Kr,CM SIM Kr,7,3,1,5,1,2,3,2,CM SIM Kr
+315123-0003,Injection mirrors discrete lamp Ne,CM SIM Ne,7,3,1,5,1,2,3,3,CM SIM Ne
+315123-0004,Injection mirrors discrete lamp Xe,CM SIM Xe,7,3,1,5,1,2,3,4,CM SIM Xe
+315123-0005,Injection mirrors discrete lamp QTH,CM SIM Q,7,3,1,5,1,2,3,5,CM SIM Q
+315130-0000,Integrating Sphere Support,CM ISS,5,3,1,5,1,3,0,0,CM ISS
+315140-0000,nan,nan,5,3,1,5,1,4,0,0,nan
+315200-0000,Filter Wheel Assembly,FWA,4,3,1,5,2,0,0,0,FWA
+315210-0000,Filters sub assembly,CM FWFA,5,3,1,5,2,1,0,0,CM FWFA
+315211-0000,Equalized Filters,CM FW F,6,3,1,5,2,1,1,0,CM FW F
+315211-0001,Equalized filter - VIS,CM FW FVIS,7,3,1,5,2,1,1,1,CM FW FVIS
+315211-0002,Equalized filter - LR1,CM FW FLR1,7,3,1,5,2,1,1,2,CM FW FLR1
+315211-0003,Equalized filter - LR2,CM FW FLR2,7,3,1,5,2,1,1,3,CM FW FLR2
+315211-0004,Equalized filter - MR1,CM FW FMR1,7,3,1,5,2,1,1,4,CM FW FMR1
+315211-0005,Equalized filter - MR2,CW FM FMR2,7,3,1,5,2,1,1,5,CW FM FMR2
+315211-0006,Equalized filter - MR3,CM FW FMR3,7,3,1,5,2,1,1,6,CM FW FMR3
+315211-0007,Equalized filter - MR4,CM FW FMR4,7,3,1,5,2,1,1,7,CM FW FMR4
+315211-0008,Equalized filter - HR1,CM FW FHR1,7,3,1,5,2,1,1,8,CM FW FHR1
+315211-0009,Equalized filter - HR2,CM FW FHR2,7,3,1,5,2,1,1,9,CM FW FHR2
+315211-0010,Equalized filter - HR3,CM FW FHR3,7,3,1,5,2,1,1,10,CM FW FHR3
+315211-0011,Equalized filter - HR4,CM FW FHR4,7,3,1,5,2,1,1,11,CM FW FHR4
+315212-0000,Equalized filters frames,CM FW FF,6,3,1,5,2,1,2,0,CM FW FF
+315220-0000,Filter wheel motorized support,CM FW MS,5,3,1,5,2,2,0,0,CM FW MS
+315221-0000,Rotary wheel disk,CM FW RWD,6,3,1,5,2,2,1,0,CM FW RWD
+315221-0001,Rotary disk,CM FW RD,7,3,1,5,2,2,1,1,CM FW RD
+315221-0002,Rotary disk cover,CM FW RC,7,3,1,5,2,2,1,2,CM FW RC
+315222-0000,Rotary stage,CM FW RS,6,3,1,5,2,2,2,0,CM FW RS
+315223-0000,Rotary wheel support structure,CM FW RSS,6,3,1,5,2,2,3,0,CM FW RSS
+315230-0000,nan,nan,5,3,1,5,2,3,0,0,nan
+315300-0000,Relay Optics Assembly,ROA,4,3,1,5,3,0,0,0,ROA
+315310-0000,M1 SubAssembly,CM RO M1A,5,3,1,5,3,1,0,0,CM RO M1A
+315311-0000,M1 Mirror,CM RO M1,6,3,1,5,3,1,1,0,CM RO M1
+315312-0000,M1 Gimbal mounting,CM RO M1G,6,3,1,5,3,1,2,0,CM RO M1G
+315320-0000,M2 SubAssembly,CM RO M2A,5,3,1,5,3,2,0,0,CM RO M2A
+315321-0000,M2 Mirror,CM RO M2,6,3,1,5,3,2,1,0,CM RO M2
+315322-0000,M2 Gimbal mounting,CM RO M2G,6,3,1,5,3,2,2,0,CM RO M2G
+315330-0000,M3 SubAssembly,CM RO M3A,5,3,1,5,3,3,0,0,CM RO M3A
+315331-0000,M3 Mirror,CM RO M3,6,3,1,5,3,3,1,0,CM RO M3
+315332-0000,M3 Gimbal mounting,CM RO M3G,6,3,1,5,3,3,2,0,CM RO M3G
+315340-0000,FM1 SubAssembly,CM RO FM1A,5,3,1,5,3,4,0,0,CM RO FM1A
+315341-0000,Folding mirror 1,CM RO FM1,6,3,1,5,3,4,1,0,CM RO FM1
+315342-0000,FM1 mounting,CM RO FM3M,6,3,1,5,3,4,2,0,CM RO FM3M
+315350-0000,FM2 SubAssembly,CM RO FM2A,5,3,1,5,3,5,0,0,CM RO FM2A
+315351-0000,Folding mirror 2,CM RO FM2,6,3,1,5,3,5,1,0,CM RO FM2
+315352-0000,FM2 mounting,CM RO FM2M,6,3,1,5,3,5,2,0,CM RO FM2M
+315360-0000,FM3 SubAssembly,CM RO FM3A,5,3,1,5,3,6,0,0,CM RO FM3A
+315361-0000,Folding mirror 3,CM RO FM3,6,3,1,5,3,6,1,0,CM RO FM3
+315362-0000,FM3 mounting,CM RO FM3M,6,3,1,5,3,6,2,0,CM RO FM3M
+315370-0000,Pupil SubAssembly,CM RO PA,5,3,1,5,3,7,0,0,CM RO PA
+315371-0000,Pupil Mask,CM RO PM,6,3,1,5,3,7,1,0,CM RO PM
+315372-0000,PM Mounting,CM RO PMM,6,3,1,5,3,7,2,0,CM RO PMM
+315380-0000,Relay Optics Support Structure,CM RO SS,5,3,1,5,3,8,0,0,CM RO SS
+315381-0000,Relay optics bench,CM RO B,6,3,1,5,3,8,1,0,CM RO B
+315381-0001,Relay optics thermal sensor,CM RO TS,7,3,1,5,3,8,1,1,CM RO TS
+315382-0000,Relay optics baffles,CM RO BA,6,3,1,5,3,8,2,0,CM RO BA
+315382-0001,Relay optics baffle 1,CM RO BA1,7,3,1,5,3,8,2,1,CM RO BA1
+315382-0002,Relay optics baffle 2,CM RO BA2,7,3,1,5,3,8,2,2,CM RO BA2
+315383-0000,Relay optics post,CM RO P,6,3,1,5,3,8,3,0,CM RO P
+315400-0000,Calibration Mask Wheel Assembly,CMWA,4,3,1,5,4,0,0,0,CMWA
+315410-0000,Calibration Masks SubAssembly,CM MW SA,5,3,1,5,4,1,0,0,CM MW SA
+315411-0000,Open Mask Set,CM MW OMS,6,3,1,5,4,1,1,0,CM MW OMS
+315411-0001,Open Mask,CM MW OM,7,3,1,5,4,1,1,1,CM MW OM
+315411-0002,Open Mask Frame,CM MW OMF,7,3,1,5,4,1,1,2,CM MW OMF
+315411-0003,Open Mask Mount,CM MW OMM,7,3,1,5,4,1,1,3,CM MW OMM
+315411-0004,Open Mask Alignment Pins,CM MW OMP,7,3,1,5,4,1,1,4,CM MW OMP
+315412-0000,4mas Masks set,CM WM M4S,6,3,1,5,4,1,2,0,CM WM M4S
+315412-0001,Pinholes mask 4mas,CM MW PM4,7,3,1,5,4,1,2,1,CM MW PM4
+315412-0002,Pinholes mask 4mas frame,CM MW PM4F,7,3,1,5,4,1,2,2,CM MW PM4F
+315412-0003,Pinholes mask 4mas mount,CM MW PM4M,7,3,1,5,4,1,2,3,CM MW PM4M
+315412-0004,Pinholes mask 4mas alignment pin,CM MW PM4P,7,3,1,5,4,1,2,4,CM MW PM4P
+315412-0005,Traces mask 4mas,CM MW TM4,7,3,1,5,4,1,2,5,CM MW TM4
+315412-0006,Traces mask 4mas frame,CM MW TM4F,7,3,1,5,4,1,2,6,CM MW TM4F
+315412-0007,Traces mask 4mas mount,CM MW TM4M,7,3,1,5,4,1,2,7,CM MW TM4M
+315412-0008,Traces mask 4mas alignment pin,CM MW TM4P,7,3,1,5,4,1,2,8,CM MW TM4P
+315413-0000,10mas Masks set,CW MW M10S,6,3,1,5,4,1,3,0,CW MW M10S
+315413-0001,Pinholes mask 10mas,CM MW PM10,7,3,1,5,4,1,3,1,CM MW PM10
+315413-0002,Pinholes mask 10mas frame,CM MW PM10F,7,3,1,5,4,1,3,2,CM MW PM10F
+315413-0003,Pinholes mask 10mas mount,CM MW PM10M,7,3,1,5,4,1,3,3,CM MW PM10M
+315413-0004,Pinholes mask 10mas alignment pin,CM MW PM10P,7,3,1,5,4,1,3,4,CM MW PM10P
+315413-0005,Traces mask 10mas,CM MW TM10,7,3,1,5,4,1,3,5,CM MW TM10
+315413-0006,Traces mask 10mas frame,CM MW TM10F,7,3,1,5,4,1,3,6,CM MW TM10F
+315413-0007,Traces mask 10mas mount,CM MW TM10M,7,3,1,5,4,1,3,7,CM MW TM10M
+315413-0008,Traces mask 10mas alignment pin,CM MW TM10P,7,3,1,5,4,1,3,8,CM MW TM10P
+315414-0000,20mas Masks set,CW MW M20S,6,3,1,5,4,1,4,0,CW MW M20S
+315414-0001,Pinholes mask 20mas,CM MW PM20,7,3,1,5,4,1,4,1,CM MW PM20
+315414-0002,Pinholes mask 20mas frame,CM MW PM20F,7,3,1,5,4,1,4,2,CM MW PM20F
+315414-0003,Pinholes mask 20mas mount,CM MW PM20M,7,3,1,5,4,1,4,3,CM MW PM20M
+315414-0004,Pinholes mask 20mas alignment pin,CM MW PM20P,7,3,1,5,4,1,4,4,CM MW PM20P
+315414-0005,Traces mask 20mas,CM MW TM20,7,3,1,5,4,1,4,5,CM MW TM20
+315414-0006,Traces mask 20mas frame,CM MW TM20F,7,3,1,5,4,1,4,6,CM MW TM20F
+315414-0007,Traces mask 20mas mount,CM MW TM20M,7,3,1,5,4,1,4,7,CM MW TM20M
+315414-0008,Traces mask 20mas alignment pin,CM MW TM20P,7,3,1,5,4,1,4,8,CM MW TM20P
+315415-0000,30x60mas Masks set,CM MW M30S,6,3,1,5,4,1,5,0,CM MW M30S
+315415-0001,Pinholes mask 30x60mas,CM MW PM30,7,3,1,5,4,1,5,1,CM MW PM30
+315415-0002,Pinholes mask 30x60mas frame,CM MW PM30F,7,3,1,5,4,1,5,2,CM MW PM30F
+315415-0003,Pinholes mask 30x60mas mount,CM MW PM30M,7,3,1,5,4,1,5,3,CM MW PM30M
+315415-0004,Pinholes mask 30x60mas alignment pin,CM MW PM30P,7,3,1,5,4,1,5,4,CM MW PM30P
+315415-0005,Traces mask 30x60mas,CM MW TM30,7,3,1,5,4,1,5,5,CM MW TM30
+315415-0006,Traces mask 30x60mas frane,CM MW TM30F,7,3,1,5,4,1,5,6,CM MW TM30F
+315415-0007,Traces mask 30x60mas mount,CM MW TM30M,7,3,1,5,4,1,5,7,CM MW TM30M
+315415-0008,Traces mask 30x60mas alignment pin,CM MW TM30P,7,3,1,5,4,1,5,8,CM MW TM30P
+315416-0000,Close Mask Set,CM MW CMS,6,3,1,5,4,1,6,0,CM MW CMS
+315416-0001,Close mask,CM MW CM,7,3,1,5,4,1,6,1,CM MW CM
+315416-0002,Close mask frame,CM MW CMF,7,3,1,5,4,1,6,2,CM MW CMF
+315416-0003,Close mask mount,CM MW CMM,7,3,1,5,4,1,6,3,CM MW CMM
+315416-0004,Close mask alignment pins,CM MW CMP,7,3,1,5,4,1,6,4,CM MW CMP
+315420-0000,Calibration Mask Wheel Motorized Support,CM MW MS,5,3,1,5,4,2,0,0,CM MW MS
+315421-0000,Rotary wheel disk,CM MW D,6,3,1,5,4,2,1,0,CM MW D
+315421-0001,Rotary disk,CM MW RD,7,3,1,5,4,2,1,1,CM MW RD
+315421-0002,Rotary disk cover,CM MW DC,7,3,1,5,4,2,1,2,CM MW DC
+315422-0000,Rotary stage,CM MW RS,6,3,1,5,4,2,2,0,CM MW RS
+315423-0000,Rotary wheel support structure,CM MW SS,6,3,1,5,4,2,3,0,CM MW SS
+315430-0000,nan,nan,5,3,1,5,4,3,0,0,nan
+315431-0000,nan,nan,6,3,1,5,4,3,1,0,nan
+315432-0000,nan,nan,6,3,1,5,4,3,2,0,nan
+315440-0000,nan,nan,5,3,1,5,4,4,0,0,nan
+315441-0000,nan,nan,6,3,1,5,4,4,1,0,nan
+315442-0000,nan,nan,6,3,1,5,4,4,2,0,nan
+315450-0000,nan,nan,5,3,1,5,4,5,0,0,nan
+315451-0000,nan,nan,6,3,1,5,4,5,1,0,nan
+315452-0000,nan,nan,6,3,1,5,4,5,2,0,nan
+315500-0000,ICU Positioning Mechanism Assembly,IPMA,4,3,1,5,5,0,0,0,IPMA
+315510-0000,ICU Positioning Stage,CM IPM PS,5,3,1,5,5,1,0,0,CM IPM PS
+315511-0000,ICU Positioning stage actuator,CM IPM PSA,6,3,1,5,5,1,1,0,CM IPM PSA
+315511-0001,ICU Positioning stage motor,CM IPM PSM,7,3,1,5,5,1,1,1,CM IPM PSM
+315511-0002,ICU Positioning stage motor support,CM IPM PSMS,7,3,1,5,5,1,1,2,CM IPM PSMS
+315511-0003,ICU Positioning stage flexible coupling,CM IPM PSFC,7,3,1,5,5,1,1,3,CM IPM PSFC
+315511-0004,ICU Positioning stage shaft,CM IPM PSS,7,3,1,5,5,1,1,4,CM IPM PSS
+315511-0005,ICU Positioning stage actuated nut,CM IPM PSN,7,3,1,5,5,1,1,5,CM IPM PSN
+315511-0006,ICU Positioning stage actuated nut support,CM IPM PSNS,7,3,1,5,5,1,1,6,CM IPM PSNS
+315511-0007,ICU Positioning stage bearings,CM IPM PSB,7,3,1,5,5,1,1,7,CM IPM PSB
+315511-0008,ICU Positioning stage bearing support,CM IPM PSBS,7,3,1,5,5,1,1,8,CM IPM PSBS
+315512-0000,ICU Positioning stage feedback,CM IPM PSF,6,3,1,5,5,1,2,0,CM IPM PSF
+315512-0001,ICU Positioning stage encoder head,CM IPM PSEH,7,3,1,5,5,1,2,1,CM IPM PSEH
+315512-0002,ICU Positioning stage encoder guide,CM IPM PSEG,7,3,1,5,5,1,2,2,CM IPM PSEG
+315512-0003,ICU Positioning stage initial limit switch,CM IPM PSLI,7,3,1,5,5,1,2,3,CM IPM PSLI
+315512-0004,ICU Positioning stage final limit switch,CM IPM PSLF,7,3,1,5,5,1,2,4,CM IPM PSLF
+315513-0000,ICU Positioning stage carriage,CM IPM PSC,6,3,1,5,5,1,3,0,CM IPM PSC
+315520-0000,ICU Focussing stage,CM IPM FS,5,3,1,5,5,2,0,0,CM IPM FS
+315521-0000,ICU Focussing stage actuator,CM IPM FSA,6,3,1,5,5,2,1,0,CM IPM FSA
+315521-0001,ICU Focussing stage motor,CM IPM FSM,7,3,1,5,5,2,1,1,CM IPM FSM
+315521-0002,ICU Focussing stage motor support,CM IPM FSMS,7,3,1,5,5,2,1,2,CM IPM FSMS
+315521-0003,ICU Focussing stage flexible coupling,CM IPM FSFC,7,3,1,5,5,2,1,3,CM IPM FSFC
+315521-0004,ICU Focussing stage shaft,CM IPM FSS,7,3,1,5,5,2,1,4,CM IPM FSS
+315521-0005,ICU Focussing stage actuated nut,CM IPM FSN,7,3,1,5,5,2,1,5,CM IPM FSN
+315521-0006,ICU Focussing stage actuated nut support,CM IPM FSNS,7,3,1,5,5,2,1,6,CM IPM FSNS
+315521-0007,ICU Focussing stage bearings,CM IPM FSBS,7,3,1,5,5,2,1,7,CM IPM FSBS
+315521-0008,ICU Focussing stage bearing support,CM IPM FSF,7,3,1,5,5,2,1,8,CM IPM FSF
+315522-0000,ICU Focussing stage feedback,CM IPM FSF,6,3,1,5,5,2,2,0,CM IPM FSF
+315522-0001,ICU Focussing stage encoder head,CM IPM FSEH,7,3,1,5,5,2,2,1,CM IPM FSEH
+315522-0002,ICU Focussing stage encoder guide,CM IPM FSEG,7,3,1,5,5,2,2,2,CM IPM FSEG
+315522-0003,ICU Focussing stage initial limit switch,CM IPM FSLI,7,3,1,5,5,2,2,3,CM IPM FSLI
+315522-0004,ICU Focussing stage final limit switch,CM IPM FSLF,7,3,1,5,5,2,2,4,CM IPM FSLF
+315530-0000,ICU Positioning Mechanism Structure,CM IPM SS,5,3,1,5,5,3,0,0,CM IPM SS
+315531-0000,ICU Positioning Mechanism Bench,CM IPM B,6,3,1,5,5,3,1,0,CM IPM B
+315531-0001,ICU Positioning Mechanism Temperature Sensor,CM IPM TS,7,3,1,5,5,3,1,1,CM IPM TS
+315532-0000,ICU Guiding Set,CM IPM G,6,3,1,5,5,3,2,0,CM IPM G
+315532-0001,Guiding rail 1,CM IPM GR1,7,3,1,5,5,3,2,1,CM IPM GR1
+315532-0002,Guiding rail 2,CM IPM GR2,7,3,1,5,5,3,2,2,CM IPM GR2
+315532-0003,Guiding slides 1,CM IPM GS1,7,3,1,5,5,3,2,3,CM IPM GS1
+315532-0004,Guiding slides 2,CM IPM GS2,7,3,1,5,5,3,2,4,CM IPM GS2
+315532-0005,Guiding slides 3,CM IPM GS3,7,3,1,5,5,3,2,5,CM IPM GS3
+315532-0006,Guiding slides 4,CM IPM GS4,7,3,1,5,5,3,2,6,CM IPM GS4
+315600-0000,ICU Output Light Assembly,IOLA,4,3,1,5,6,0,0,0,IOLA
+315610-0000,ICU Output SubAssembly,CM IOA,5,3,1,5,6,1,0,0,CM IOA
+315611-0000,Folding Mirror 4,CM IO FM4,6,3,1,5,6,1,1,0,CM IO FM4
+315612-0000,FM4 Mounting,CM IO FM4M,6,3,1,5,6,1,2,0,CM IO FM4M
+315700-0000,AOCU Output light assembly,AOOLA,4,3,1,5,7,0,0,0,AOOLA
+315710-0000,AOCU Output SubAssembly,CM AOOA,5,3,1,5,7,1,0,0,CM AOOA
+315711-0000,AOCU Output folding mirror,CM AOO FM,6,3,1,5,7,1,1,0,CM AOO FM
+315712-0000,AOCU Output folding mirror mounting,CM AOO FMM,6,3,1,5,7,1,2,0,CM AOO FMM
+316000-0000,Geometrical Calibration Unit,GCU,3,3,1,6,0,0,0,0,GCU
+316100-0000,Technical Field Mask Assembly,GTFMA,4,3,1,6,1,0,0,0,GTFMA
+316110-0000,GCU Integrating sphere,CM GIS,5,3,1,6,1,1,0,0,CM GIS
+316120-0000,Optical Fibres Bundle,CM OFB,5,3,1,6,1,2,0,0,CM OFB
+316121-0000,GCU Optical fibres set ,CM GOF,6,3,1,6,1,2,1,0,CM GOF
+316121-0001,GCU Multmode optical fibres 150µm core 1,CM GOF F001,7,3,1,6,1,2,1,1,CM GOF F001
+316121-0002,Optical fibre ferrule coupling 1,CM GOF FC001,7,3,1,6,1,2,1,2,CM GOF FC001
+316121-0945,Optical fibres bundle connector,CM GOF BC,7,3,1,6,1,2,1,945,CM GOF BC
+316130-0000,Technical Field Mask Structure,CM GTFM,5,3,1,6,1,3,0,0,CM GTFM
+316131-0000,Technical Field Mask Plate,CM GTFM P,6,3,1,6,1,3,1,0,CM GTFM P
+316131-0001,Technical Field Mask Plate Temperature Sensor 1,CM GTFM PTS1,7,3,1,6,1,3,1,1,CM GTFM PTS1
+316131-0002,Technical Field Mask Plate Temperature Sensor 2,CM GTFM PTS2,7,3,1,6,1,3,1,2,CM GTFM PTS2
+316132-0000,Technical Field Mask Support,CM GTFM S,6,3,1,6,1,3,2,0,CM GTFM S
+316200-0000,GCU Electronics Rack Assembly,GERA,4,3,1,6,2,0,0,0,GERA
+316210-0000,GCU Light sources SubAssembly,CM GLSA,5,3,1,6,2,1,0,0,CM GLSA
+316211-0000,LED Sources,CM GLS,6,3,1,6,2,1,1,0,CM GLS
+316211-0001,LED Source 1 - 680nm,CM GLS1,7,3,1,6,2,1,1,1,CM GLS1
+316211-0002,LED Source 2 - 780nm,CM GLS2,7,3,1,6,2,1,1,2,CM GLS2
+316211-0003,LED Source 3 - 1050nm,CM GLS3,7,3,1,6,2,1,1,3,CM GLS3
+316211-0004,LED Source 1 - Photodiode,CM GLS1Ph,7,3,1,6,2,1,1,4,CM GLS1Ph
+316211-0005,LED Source 2 - Photodiode,CM GLS2Ph,7,3,1,6,2,1,1,5,CM GLS2Ph
+316211-0006,LED Source 3 - Photodiode,CM GLS3Ph,7,3,1,6,2,1,1,6,CM GLS3Ph
+316212-0000,GCU Photodetector,CM GLD,6,3,1,6,2,1,2,0,CM GLD
+316213-0000,Fibre Splitter 4x1,CM GLFS,6,3,1,6,2,1,3,0,CM GLFS
+316214-0000,Optical fiber 600µm core,CM GLOF,6,3,1,6,2,1,4,0,CM GLOF
+316220-0000,GCU Light sources configuration electronics,CM GLE,5,3,1,6,2,2,0,0,CM GLE
+316221-0000,LEDs power supply,CM GLELP,6,3,1,6,2,2,1,0,CM GLELP
+316222-0000,Photodetector Power supply,CM GLEPP,6,3,1,6,2,2,2,0,CM GLEPP
+316223-0000,Photodetector Resistance regulator,CM GLEPR,6,3,1,6,2,2,3,0,CM GLEPR
+316300-0000,GCU Positioning Mechanism Assembly,GPMA,4,3,1,6,3,0,0,0,GPMA
+316310-0000,GCU Positioning Stage,CM GPM PS,5,3,1,6,3,1,0,0,CM GPM PS
+316311-0000,GCU Positioning stage actuator,CM GPM PSA,6,3,1,6,3,1,1,0,CM GPM PSA
+316311-0001,GCU Positioning stage motor,CM GPM PSM,7,3,1,6,3,1,1,1,CM GPM PSM
+316311-0002,GCU Positioning stage motor support,CM GPM PSMS,7,3,1,6,3,1,1,2,CM GPM PSMS
+316311-0003,GCU Positioning stage flexible coupling,CM GPM PSFC,7,3,1,6,3,1,1,3,CM GPM PSFC
+316311-0004,GCU Positioning stage shaft,CM GPM PSS,7,3,1,6,3,1,1,4,CM GPM PSS
+316311-0005,GCU Positioning stage actuated nut,CM GPM PSN,7,3,1,6,3,1,1,5,CM GPM PSN
+316311-0006,GCU Positioning stage actuated nut support,CM GPM PSNS,7,3,1,6,3,1,1,6,CM GPM PSNS
+316311-0007,GCU Positioning stage bearings,CM GPM PSB,7,3,1,6,3,1,1,7,CM GPM PSB
+316311-0008,GCU Positioning stage bearing support,CM GPM PSBS,7,3,1,6,3,1,1,8,CM GPM PSBS
+316312-0000,GCU Positioning stage feedback,CM GPM PSF,6,3,1,6,3,1,2,0,CM GPM PSF
+316312-0001,GCU Positioning stage encoder head,CM GPM PSEH,7,3,1,6,3,1,2,1,CM GPM PSEH
+316312-0002,GCU Positioning stage encoder guide,CM GPM PSEG,7,3,1,6,3,1,2,2,CM GPM PSEG
+316312-0003,GCU Positioning stage initial limit switch,CM GPM PSLI,7,3,1,6,3,1,2,3,CM GPM PSLI
+316312-0004,GCU Positioning stage final limit switch,CM GPM PSLF,7,3,1,6,3,1,2,4,CM GPM PSLF
+316320-0000,GCU Focussing stage,CM GPM FS,5,3,1,6,3,2,0,0,CM GPM FS
+316321-0000,GCU Focussing stage actuator,CM GPM FSA,6,3,1,6,3,2,1,0,CM GPM FSA
+316321-0001,GCU Focussing stage motor,CM GPM FSM,7,3,1,6,3,2,1,1,CM GPM FSM
+316321-0002,GCU Focussing stage motor support,CM GPM FSMS,7,3,1,6,3,2,1,2,CM GPM FSMS
+316321-0003,GCU Focussing stage flexible coupling,CM GPM FSFC,7,3,1,6,3,2,1,3,CM GPM FSFC
+316321-0004,GCU Focussing stage shaft,CM GPM FSS,7,3,1,6,3,2,1,4,CM GPM FSS
+316321-0005,GCU Focussing stage actuated nut,CM GPM FSN,7,3,1,6,3,2,1,5,CM GPM FSN
+316321-0006,GCU Focussing stage actuated nut support,CM GPM FSNS,7,3,1,6,3,2,1,6,CM GPM FSNS
+316321-0007,GCU Focussing stage bearings,CM GPM FSB,7,3,1,6,3,2,1,7,CM GPM FSB
+316321-0008,GCU Focussing stage bearing support,CM GPM FSBS,7,3,1,6,3,2,1,8,CM GPM FSBS
+316322-0000,GCU Focussing stage feedback,CM GPM FSF,6,3,1,6,3,2,2,0,CM GPM FSF
+316322-0001,GCU Focussing stage encoder head,CM GPM FSEH,7,3,1,6,3,2,2,1,CM GPM FSEH
+316322-0002,GCU Focussing stage encoder guide,CM GPM FSEG,7,3,1,6,3,2,2,2,CM GPM FSEG
+316322-0003,GCU Focussing stage initial limit switches,CM GPM FSLI,7,3,1,6,3,2,2,3,CM GPM FSLI
+316322-0004,GCU Focussing stage final limit swtiches,CM GPM FSLF,7,3,1,6,3,2,2,4,CM GPM FSLF
+316330-0000,GCU Positioning Mechanism Structure,CM GPM SS,5,3,1,6,3,3,0,0,CM GPM SS
+316331-0000,GCU Positioning Mechanism Bench,CM GPM B,6,3,1,6,3,3,1,0,CM GPM B
+316331-0001,GCU Positioning Mechanism Temperature Sensor,CM GPM TS,7,3,1,6,3,3,1,1,CM GPM TS
+316332-0000,GCU Guiding Set,CM GPM G,6,3,1,6,3,3,2,0,CM GPM G
+316332-0001,GCU Positioning Guiding Rail 1,CM GPM PGR1,7,3,1,6,3,3,2,1,CM GPM PGR1
+316332-0002,GCU Positioning Guiding Rail 2,CM GPM PGR2,7,3,1,6,3,3,2,2,CM GPM PGR2
+316332-0003,GCU Focussing Guiding Rail 1,CM GPM FGR1,7,3,1,6,3,3,2,3,CM GPM FGR1
+316332-0004,GCU Focussing Guiding Rail 2,CM GPM FGR2,7,3,1,6,3,3,2,4,CM GPM FGR2
+316332-0005,GCU Guiding Slides 1,CM GPM GS1,7,3,1,6,3,3,2,5,CM GPM GS1
+316332-0006,GCU Guiding Slides 2,CM GPM GS2,7,3,1,6,3,3,2,6,CM GPM GS2
+316332-0007,GCU Guiding Slides 3,CM GPM GS3,7,3,1,6,3,3,2,7,CM GPM GS3
+316332-0008,GCU Guiding Slides 4,CM GPM GS4,7,3,1,6,3,3,2,8,CM GPM GS4
+316332-0009,GCU Guiding Slides 5,CM GPM GS5,7,3,1,6,3,3,2,9,CM GPM GS5
+316332-0010,GCU Guiding Slides 6,CM GPM GS6,7,3,1,6,3,3,2,10,CM GPM GS6
+316332-0011,GCU Guiding Slides 7,CM GPM GS7,7,3,1,6,3,3,2,11,CM GPM GS7
+316332-0012,GCU Guiding Slides 8,CM GPM GS8,7,3,1,6,3,3,2,12,CM GPM GS8
+316400-0000,nan,nan,4,3,1,6,4,0,0,0,nan
+316410-0000,nan,nan,5,3,1,6,4,1,0,0,nan
+316420-0000,nan,nan,5,3,1,6,4,2,0,0,nan
+316430-0000,nan,nan,5,3,1,6,4,3,0,0,nan
+316440-0000,nan,nan,5,3,1,6,4,4,0,0,nan
+316450-0000,nan,nan,5,3,1,6,4,5,0,0,nan
+317000-0000,AO Calibration Unit,ACU,3,3,1,7,0,0,0,0,ACU
+317100-0000,AOCU focal plane module,AOFPM,4,3,1,7,1,0,0,0,AOFPM
+317110-0000,AOCU Enclosure Assembly,nan,5,3,1,7,1,1,0,0,nan
+317110-0010,AOCU enclosure - Down plate,nan,6,3,1,7,1,1,0,10,nan
+317110-0020,AOCU enclosure - Up plate,nan,6,3,1,7,1,1,0,20,nan
+317110-0030,AOCU enclosure - Front plate,nan,6,3,1,7,1,1,0,30,nan
+317110-0040,AOCU enclosure - Left plate,nan,6,3,1,7,1,1,0,40,nan
+317110-0050,AOCU enclosure - Right plate,nan,6,3,1,7,1,1,0,50,nan
+317110-0060,AOCU enclosure - Background plate,nan,6,3,1,7,1,1,0,60,nan
+317110-0070,AOCU encloxure - Connector entrance,nan,6,3,1,7,1,1,0,70,nan
+317120-0000,Baseplate & Interface Assembly,nan,5,3,1,7,1,2,0,0,nan
+317121-0000,Baseplate sub assembly,nan,6,3,1,7,1,2,1,0,nan
+317122-0000,Adjusters sub assembly,nan,6,3,1,7,1,2,2,0,nan
+317123-0000,Fixation sub assembly,nan,6,3,1,7,1,2,3,0,nan
+317130-0000,Input Fibres & Bundle Assembly,nan,5,3,1,7,1,3,0,0,nan
+317131-0000,Fibre Bundle sub assembly,nan,6,3,1,7,1,3,1,0,nan
+317132-0000,Fibre mount sub assembly,nan,6,3,1,7,1,3,2,0,nan
+317140-0000,DM and Pupil Mask Assembly,nan,5,3,1,7,1,4,0,0,nan
+317141-0000,Deformable mirror,CalDM,6,3,1,7,1,4,1,0,CalDM
+317142-0000,Pupil mask sub assembly,nan,6,3,1,7,1,4,2,0,nan
+317143-0000,Deformable Mirror Cables,nan,6,3,1,7,1,4,3,0,nan
+317150-0000,Concave Mirror Assembly,nan,5,3,1,7,1,5,0,0,nan
+317150-1000,Concave Mirror - Mirror,nan,6,3,1,7,1,5,0,1000,nan
+317150-2000,Concave Mirror - Mount,nan,6,3,1,7,1,5,0,2000,nan
+317150-3000,Concave Mirror - Ring,nan,6,3,1,7,1,5,0,3000,nan
+317150-4000,Concave Mirror - O-ring,nan,6,3,1,7,1,5,0,4000,nan
+317160-0000,Rooftop Mirror Assembly,nan,5,3,1,7,1,6,0,0,nan
+317160-0010,Rooftop mirror - rooftop mirror,nan,6,3,1,7,1,6,0,10,nan
+317160-0020,Rooftop mirror - lower mount,nan,6,3,1,7,1,6,0,20,nan
+317160-0030,Rooftop mirror - top mount,nan,6,3,1,7,1,6,0,30,nan
+317200-0000,AOCU Cable and Fibres Module,ACFM,4,3,1,7,2,0,0,0,ACFM
+317210-0000,DM Cables assembly,nan,5,3,1,7,2,1,0,0,nan
+317220-0000,Multimode Fibres assembly,nan,5,3,1,7,2,2,0,0,nan
+317230-0000,Connector Panel,nan,5,3,1,7,2,3,0,0,nan
+317300-0000,AOCU Sources and fibre subrack,ASSR,4,3,1,7,3,0,0,0,ASSR
+317310-0000,LED sources,ASSRLED,5,3,1,7,3,1,0,0,ASSRLED
+317320-0000,Attenuators,nan,5,3,1,7,3,2,0,0,nan
+317330-0000,Flux monitors,ASSRFM,5,3,1,7,3,3,0,0,ASSRFM
+317340-0000,Beam splitter & combiners,nan,5,3,1,7,3,4,0,0,nan
+317350-0000,Fibres & fibre management,nan,5,3,1,7,3,5,0,0,nan
+317360-0000,Connectors & panel,nan,5,3,1,7,3,6,0,0,nan
+317400-0000,AOCU Control and Power Subrack,ACSR,4,3,1,7,4,0,0,0,ACSR
+317410-0000,LED controllers,nan,5,3,1,7,4,1,0,0,nan
+317420-0000,LED power supply,nan,5,3,1,7,4,2,0,0,nan
+317430-0000,Connectors & panel,nan,5,3,1,7,4,3,0,0,nan
+317440-0000,CalDM electronics box,nan,5,3,1,7,4,4,0,0,nan
+317450-0000,DM Ethernet cable,nan,5,3,1,7,4,5,0,0,nan
+317900-0000,AOCU AIT & Support Equipment,AASE,4,3,1,7,9,0,0,0,AASE
+317910-0000,AIT tools,nan,5,3,1,7,9,1,0,0,nan
+317920-0000,Shipping containers,nan,5,3,1,7,9,2,0,0,nan
+318000-0000,Calibration Module Support Structure,CMSS,3,3,1,8,0,0,0,0,CMSS
+318100-0000,Calibration Module Bench,CMB,4,3,1,8,1,0,0,0,CMB
+318200-0000,Calibration Module Electrical Services Harness,CMESH,4,3,1,8,2,0,0,0,CMESH
+318210-0000,GCU Cable Wrap,CM GCW,5,3,1,8,2,1,0,0,CM GCW
+318220-0000,ICU&AOCU Cable Wrap,CM IAOCW,5,3,1,8,2,2,0,0,CM IAOCW
+318230-0000,Calibration Module Connector Pannel,CM CP,5,3,1,8,2,3,0,0,CM CP
+318231-0000,Connectors & panel,CM CP C,6,3,1,8,2,3,1,0,CM CP C
+318240-0000,Calibration Module Internal Cables,CM IC,5,3,1,8,2,4,0,0,CM IC
+318300-0000,nan,nan,4,3,1,8,3,0,0,0,nan
+319000-0000,Calibration Module Support Equipment,CMSE,3,3,1,9,0,0,0,0,CMSE
+319100-0000,Calibration Module Internal Protection Enclosures,CMIPE,4,3,1,9,1,0,0,0,CMIPE
+319110-0000,GCU Handling Protection Enclosure,CM PE G,5,3,1,9,1,1,0,0,CM PE G
+319120-0000,IFS Relay Handling Protection Enclosure,CM PE RO,5,3,1,9,1,2,0,0,CM PE RO
+319130-0000,IFS Masks Wheel Handling Protection Enclosure,CM PE MW,5,3,1,9,1,3,0,0,CM PE MW
+319140-0000,IFS Uniform Source Handling Protection Enclosure,CM PE US,5,3,1,9,1,4,0,0,CM PE US
+319200-0000,Calibration Module Handling Tool,CMHT,4,3,1,9,2,0,0,0,CMHT
+319300-0000,Back Looking Pupil Reference Assembly,BLPRA,4,3,1,9,3,0,0,0,BLPRA
+319310-0000,Back Looking Pupil Reference,BLPR,5,3,1,9,3,1,0,0,BLPR
+319320-0000,Back Looking Pupil Reference Mount,BLPRM,5,3,1,9,3,2,0,0,BLPRM
+319400-0000,Calibration Module Subsystem Documentation,CMSD,4,3,1,9,4,0,0,0,CMSD
+320000-0000,Focal Plane Relay Sub-system,FPRS,2,3,2,0,0,0,0,0,FPRS
+321000-0000,LGS Dichroic Module,FLDM,3,3,2,1,0,0,0,0,FLDM
+321100-0000,Support structure,nan,4,3,2,1,1,0,0,0,nan
+321200-0000,LTAO Dichroic Motor,FLDMM,4,3,2,1,2,0,0,0,FLDMM
+321210-0000,LTAO Dichroic Limit Switch,FLDMLS,5,3,2,1,2,1,0,0,FLDMLS
+321300-0000,LTAO Dichroic Unit,FLDU,4,3,2,1,3,0,0,0,FLDU
+321300-0001,LTAO Dichroic,FLDMD,5,3,2,1,3,0,0,1,FLDMD
+321310-0000,nan,nan,5,3,2,1,3,1,0,0,nan
+321320-0000,nan,nan,5,3,2,1,3,2,0,0,nan
+321400-0000,nan,nan,4,3,2,1,4,0,0,0,nan
+322000-0000,Relay Enclosure,nan,3,3,2,2,0,0,0,0,nan
+322100-0000,Entrance Window Unit,FEWU,4,3,2,2,1,0,0,0,FEWU
+322110-0000,Window optics mounting,FWOM,5,3,2,2,1,1,0,0,FWOM
+322110-0001,Outer Window,nan,6,3,2,2,1,1,0,1,nan
+322110-0002,Inner Window,nan,6,3,2,2,1,1,0,2,nan
+322120-0000,nan,nan,5,3,2,2,1,2,0,0,nan
+322130-0000,Window Flushing Air Knife Assembly,FWFA,5,3,2,2,1,3,0,0,FWFA
+322131-0001,FESTO VUVG-L18 Series,FWFASV_1,6,3,2,2,1,3,1,1,FWFASV_1
+322200-0000,nan,nan,4,3,2,2,2,0,0,0,nan
+322300-0000,Structural Frame Unit,FSFU,4,3,2,2,3,0,0,0,FSFU
+322310-0000,Support Truss,nan,5,3,2,2,3,1,0,0,nan
+322320-0000,Axial Support,nan,5,3,2,2,3,2,0,0,nan
+322330-0000,FPRS Shim Assembly Front,nan,5,3,2,2,3,3,0,0,nan
+322340-0000,FPRS Shim Assembly Rear,nan,5,3,2,2,3,4,0,0,nan
+322400-0000,Outer Shell Unit,FOSU,4,3,2,2,4,0,0,0,FOSU
+322410-0000,Inner enclosure,nan,5,3,2,2,4,1,0,0,nan
+322420-0000,Insulation panels,nan,5,3,2,2,4,2,0,0,nan
+322430-0000,Outer cover,nan,5,3,2,2,4,3,0,0,nan
+322440-0000,Services feedthroughs,nan,5,3,2,2,4,4,0,0,nan
+322450-0000,Entrance Light Cover,nan,5,3,2,2,4,5,0,0,nan
+322500-0000,Rotating seal assembly,FRSA,4,3,2,2,5,0,0,0,FRSA
+322600-0000,Relay Cooling assembly,FECM,4,3,2,2,6,0,0,0,FECM
+322610-0000,Relay Cooling Assembly,FRCA,5,3,2,2,6,1,0,0,FRCA
+322611-0000,Manifold Assembly,nan,6,3,2,2,6,1,1,0,nan
+322612-0000,Manifold Assembly,nan,6,3,2,2,6,1,2,0,nan
+322613-0000,Manifold Assembly,nan,6,3,2,2,6,1,3,0,nan
+322614-0000,Manifold Assembly,nan,6,3,2,2,6,1,4,0,nan
+322615-0000,Manifold Assembly,nan,6,3,2,2,6,1,5,0,nan
+322616-0000,Manifold Assembly,nan,6,3,2,2,6,1,6,0,nan
+322617-0000,Coolant Flow Sensor,FRCACFM_1,6,3,2,2,6,1,7,0,FRCACFM_1
+322618-0000,Leak Detector Sensors,FRCALDS_1,6,3,2,2,6,1,8,0,FRCALDS_1
+322620-0000,Flushing Assembly,FFA,5,3,2,2,6,2,0,0,FFA
+322621-0000,Air Heater,FFAAH,6,3,2,2,6,2,1,0,FFAAH
+366622-0000,Air Inlet Valve,FFAAIV_1,6,3,6,6,6,2,2,0,FFAAIV_1
+322630-0000,Humidity Monitoring Sensors,FHMS,5,3,2,2,6,3,0,0,FHMS
+322631-0000,External Humidity Sensors,FEHMS,6,3,2,2,6,3,1,0,FEHMS
+322632-0000,Internal Humidity Sensors,FIHMS,6,3,2,2,6,3,2,0,FIHMS
+322633-0000,Humidity Wiring Loop,nan,6,3,2,2,6,3,3,0,nan
+322640-0000,Temperature Monitoring Sensors,FTMS,5,3,2,2,6,4,0,0,FTMS
+322641-0000,External Temperature Sensors,FTMSE,6,3,2,2,6,4,1,0,FTMSE
+322642-0000,Internal Temperature Sensors,FTMSI,6,3,2,2,6,4,2,0,FTMSI
+322643-0000,Temperature Wiring Loop,nan,6,3,2,2,6,4,3,0,nan
+322650-0000,FPRS Enclosure chiller,FECH,5,3,2,2,6,5,0,0,FECH
+323000-0000,Optical bench module,nan,3,3,2,3,0,0,0,0,nan
+323100-0000,OM1 Unit,FOMU1,4,3,2,3,1,0,0,0,FOMU1
+323100-0001,FPRS M1 mirror,nan,5,3,2,3,1,0,0,1,nan
+323200-0000,OM2 Unit,FOMU2,4,3,2,3,2,0,0,0,FOMU2
+323200-0001,FPRS M2 mirror,nan,5,3,2,3,2,0,0,1,nan
+323210-0000,Mirror actuator,FM2MA,5,3,2,3,2,1,0,0,FM2MA
+323211-0000,Metrol Switches,FM2LS,6,3,2,3,2,1,1,0,FM2LS
+323220-0000,M2 Sub-cell,nan,6,3,2,3,2,2,0,0,nan
+323300-0000,OM3 Unit,FOMU3,4,3,2,3,3,0,0,0,FOMU3
+323300-0001,FPRS M3 mirror,nan,5,3,2,3,3,0,0,1,nan
+323400-0000,OM4 Unit,FOMU4,4,3,2,3,4,0,0,0,FOMU4
+323400-0001,FPRS M4 mirror,nan,5,3,2,3,4,0,0,1,nan
+323410-0000,Mirror actuator,FM4MA,5,3,2,3,4,1,0,0,FM4MA
+323411-0000,Metrol Switches,FM4LS,6,3,2,3,4,1,1,0,FM4LS
+323500-0000,Optical bench,FOB,4,3,2,3,5,0,0,0,FOB
+323600-0000,Baffles,nan,4,3,2,3,6,0,0,0,nan
+329000-0000,FPRS AIV and Support Equipment,nan,3,3,2,9,0,0,0,0,nan
+329100-0000,Shipping containers,nan,4,3,2,9,1,0,0,0,nan
+329200-0000,Handling / storage frame,nan,4,3,2,9,2,0,0,0,nan
+329300-0000,Test Frame,nan,4,3,2,9,3,0,0,0,nan
+329400-0000,Optical test module,nan,4,3,2,9,4,0,0,0,nan
+329500-0000,Optics Protective Covers,nan,4,3,2,9,5,0,0,0,nan
+329600-0000,Optics Lifting Brackets,nan,4,3,2,9,6,0,0,0,nan
+329900-0000,UKATC lab infrastructure,nan,4,3,2,9,9,0,0,0,nan
+330000-0000,Instrument Static Structure,ISS,2,3,3,0,0,0,0,0,ISS
+331000-0000,Main Frame,ISSMF,3,3,3,1,0,0,0,0,ISSMF
+331000-1001,Frame temp sensor 1,ISSMFTS1,7,3,3,1,0,0,0,1001,ISSMFTS1
+331000-1002,Frame temp sensor 2,ISSMFTS2,7,3,3,1,0,0,0,1002,ISSMFTS2
+331100-0000,Structure,nan,4,3,3,1,1,0,0,0,nan
+331200-0000,Lower Rear Panel,nan,4,3,3,1,2,0,0,0,nan
+331210-0000,Lower rear panel fabrication,nan,5,3,3,1,2,1,0,0,nan
+331220-0000,Assembly and alignment features,nan,5,3,3,1,2,2,0,0,nan
+331230-0000,Service trays / brackets,nan,5,3,3,1,2,3,0,0,nan
+331300-0000,Lower Front Panel,nan,4,3,3,1,3,0,0,0,nan
+331310-0000,Lower front panel fabrication,nan,5,3,3,1,3,1,0,0,nan
+331320-0000,Assembly and alignment features,nan,5,3,3,1,3,2,0,0,nan
+331330-0000,Access features,nan,5,3,3,1,3,3,0,0,nan
+331400-0000,Upper Left Panel,nan,4,3,3,1,4,0,0,0,nan
+331410-0000,Upper left panel fabrication,nan,5,3,3,1,4,1,0,0,nan
+331420-0000,Assembly and alignment features,nan,5,3,3,1,4,2,0,0,nan
+331500-0000,Upper Right Panel,nan,4,3,3,1,5,0,0,0,nan
+331510-0000,Upper right panel fabrication,nan,5,3,3,1,5,1,0,0,nan
+331520-0000,Assembly and alignment features,nan,5,3,3,1,5,2,0,0,nan
+331600-0000,Rear Bridge,nan,4,3,3,1,6,0,0,0,nan
+331610-0000,Rearbridge fabrication,nan,5,3,3,1,6,1,0,0,nan
+331620-0000,Assembly and alignment features,nan,5,3,3,1,6,2,0,0,nan
+331630-0000,Bridge lifting mechanism,nan,5,3,3,1,6,3,0,0,nan
+331700-0000,Front Bridge,nan,4,3,3,1,7,0,0,0,nan
+331710-0000,Front bridge fabrication,nan,5,3,3,1,7,1,0,0,nan
+331720-0000,Assembly and alignment features,nan,5,3,3,1,7,2,0,0,nan
+331730-0000,Bridge lifting mechanism,nan,5,3,3,1,7,3,0,0,nan
+331800-0000,Struts,nan,4,3,3,1,8,0,0,0,nan
+331810-0000,Lower triangulation struts left,nan,5,3,3,1,8,1,0,0,nan
+331820-0000,Lower triangulation struts right,nan,5,3,3,1,8,2,0,0,nan
+331830-0000,Upper triangulation struts rear,nan,5,3,3,1,8,3,0,0,nan
+331840-0000,Upper triangulation struts front,nan,5,3,3,1,8,4,0,0,nan
+331850-0000,Top frame supports struts rear,nan,5,3,3,1,8,5,0,0,nan
+331860-0000,Top frame supports struts front,nan,5,3,3,1,8,6,0,0,nan
+332000-0000,Top Frame,ISSTF,3,3,3,2,0,0,0,0,ISSTF
+332000-1001,Frame Temp Sensor 1,ISSTFTS1,7,3,3,2,0,0,0,1001,ISSTFTS1
+332000-1002,Frame Temp Sensor 2,ISSTFTS2,7,3,3,2,0,0,0,1002,ISSTFTS2
+332000-1003,Air Temp Sensor 1,ISSTFTS3,7,3,3,2,0,0,0,1003,ISSTFTS3
+332100-0000,Distribution box,nan,4,3,3,2,1,0,0,0,nan
+332110-0000,Distribution box fabrication,nan,5,3,3,2,1,1,0,0,nan
+332120-0000,Assembly and alignment features,nan,5,3,3,2,1,2,0,0,nan
+332130-0000,Cabinet mounts,nan,5,3,3,2,1,3,0,0,nan
+332140-0000,Glycol distribution mounts,nan,5,3,3,2,1,4,0,0,nan
+332150-0000,Service trays / brackets,nan,5,3,3,2,1,5,0,0,nan
+332200-0000,Outer enclosure Unit,IOE,4,3,3,2,2,0,0,0,IOE
+332210-0000,IOE Box fabrication,nan,5,3,3,2,2,1,0,0,nan
+332220-0000,Assembly and alignment features,nan,5,3,3,2,2,2,0,0,nan
+332221-0000,Top frame alignment hole,nan,6,3,3,2,2,2,1,0,nan
+332222-0000,Coarse alignment pads,nan,6,3,3,2,2,2,2,0,nan
+332223-0000,LGSS Coarse alignment pads,nan,6,3,3,2,2,2,3,0,nan
+332224-0000,LGSS FM Coarse alignment pads,nan,6,3,3,2,2,2,4,0,nan
+332225-0000,CM Coarse alignment pads,nan,6,3,3,2,2,2,5,0,nan
+332230-0000,Main Panels/Hatches,nan,5,3,3,2,2,3,0,0,nan
+332240-0000,Slow Shutter,IOESS,5,3,3,2,2,4,0,0,IOESS
+332241-0000,SS Main Panel,nan,6,3,3,2,2,4,1,0,nan
+332242-0000,SS shutter panel,nan,6,3,3,2,2,4,2,0,nan
+332243-0000,SS motor mechanism,nan,6,3,3,2,2,4,3,0,nan
+332243-1001,Motor,IOESSM1,7,3,3,2,2,4,3,1001,IOESSM1
+332243-1002,Limit switch 1,IOESSLS1,7,3,3,2,2,4,3,1002,IOESSLS1
+332243-1003,Limit switch 2,IOESSLS2,7,3,3,2,2,4,3,1003,IOESSLS2
+332243-1004,Limit switch 3,IOESSLS3,7,3,3,2,2,4,3,1004,IOESSLS3
+332243-1005,Limit switch 4,IOESSLS4,7,3,3,2,2,4,3,1005,IOESSLS4
+332244-0000,SS Environmental sensors,nan,6,3,3,2,2,4,4,0,nan
+332244-1001 ,Air temp sensor 1,IOETS1,7,3,3,2,2,4,4,1001,IOETS1
+332244-1002,Humiditity sensor 1,IOEHS1,7,3,3,2,2,4,4,1002,IOEHS1
+332250-0000,FPRS Seal,IOEFS,5,3,3,2,2,5,0,0,IOEFS
+332260-0000,Service trays / brackets,nan,5,3,3,2,2,6,0,0,nan
+332300-0000,Left Bridge,nan,4,3,3,2,3,0,0,0,nan
+332310-0000,Left bridge fabrication,nan,5,3,3,2,3,1,0,0,nan
+332320-0000,Assembly and alignment features,nan,5,3,3,2,3,2,0,0,nan
+332321-0000,Top frame alignment slot,nan,6,3,3,2,3,2,1,0,nan
+332322-0000,FPRS coarse alignment pads,nan,6,3,3,2,3,2,2,0,nan
+332330-0000,Bannisters,nan,5,3,3,2,3,3,0,0,nan
+332400-0000,Right Bridge,nan,4,3,3,2,4,0,0,0,nan
+332410-0000,Right bridge fabrication,nan,5,3,3,2,4,1,0,0,nan
+332420-0000,Assembly and alignment features,nan,5,3,3,2,4,2,0,0,nan
+332421-0000,FPRS coarse alignment pads,nan,6,3,3,2,4,2,1,0,nan
+332430-0000,NGSS Access hatch,nan,5,3,3,2,4,3,0,0,nan
+332440-0000,Service trays / brackets,nan,5,3,3,2,4,4,0,0,nan
+332450-0000,Bannisters,nan,5,3,3,2,4,5,0,0,nan
+332500-0000,Access structure,nan,4,3,3,2,5,0,0,0,nan
+332510-0000,LGSS access platform fabrication,nan,5,3,3,2,5,1,0,0,nan
+332520-0000,Stairs,nan,5,3,3,2,5,2,0,0,nan
+332530-0000,Bannisters,nan,5,3,3,2,5,3,0,0,nan
+333000-0000,Access Structure Stairs,ISSAS,3,3,3,3,0,0,0,0,ISSAS
+333100-0000,Lower panel,nan,4,3,3,3,1,0,0,0,nan
+333110-0000,Lower panel fabrication,nan,5,3,3,3,1,1,0,0,nan
+333200-0000,1st floor,nan,4,3,3,3,2,0,0,0,nan
+333210-0000,1st floor fabrication,nan,5,3,3,3,2,1,0,0,nan
+333220-0000,Bannisters,nan,5,3,3,3,2,2,0,0,nan
+333300-0000,1st floor stairs,nan,4,3,3,3,3,0,0,0,nan
+333310-0000,1st floor stairs main structure,nan,5,3,3,3,3,1,0,0,nan
+333320-0000,Bannisters,nan,5,3,3,3,3,2,0,0,nan
+333400-0000,Upper panel,nan,4,3,3,3,4,0,0,0,nan
+333410-0000,Upper panel fabrication,nan,5,3,3,3,4,1,0,0,nan
+333500-0000,2nd floor,nan,4,3,3,3,5,0,0,0,nan
+333510-0000,2nd floor fabrication,nan,5,3,3,3,5,1,0,0,nan
+333520-0000,Bannisters,nan,5,3,3,3,5,2,0,0,nan
+333600-0000,2nd floor stairs,nan,4,3,3,3,6,0,0,0,nan
+333610-0000,2nd floor stairs main structure,nan,5,3,3,3,6,1,0,0,nan
+333620-0000,Bannisters,nan,5,3,3,3,6,2,0,0,nan
+333700-0000,Acces Fencing / Gating,nan,4,3,3,3,7,0,0,0,nan
+334000-0000,Fixed Maintenance Equipment,nan,3,3,3,4,0,0,0,0,nan
+334100-0000,Mid Level Crane,nan,4,3,3,4,1,0,0,0,nan
+334200-0000,Human access gates,nan,4,3,3,4,2,0,0,0,nan
+339000-0000,AIT Equipment,nan,3,3,3,9,0,0,0,0,nan
+339100-0000,Ground Frame,nan,4,3,3,9,1,0,0,0,nan
+339200-0000,Top frame assembly stands,nan,4,3,3,9,2,0,0,0,nan
+340000-0000,,CM LIntentionally,2,3,4,0,0,0,0,0,CM LIntentionally
+341000-0000,,CM LIntentionally,3,3,4,1,0,0,0,0,CM LIntentionally

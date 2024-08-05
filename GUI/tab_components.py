@@ -8,45 +8,45 @@ class ComponentsTab(ctk.CTkFrame):
         super().__init__(master=master)
         self.configure(bg_color="white")  # Establecer el color de fondo si es necesario
 
-        # Crear la barra lateral
-        self.sidebar_frame = ctk.CTkFrame(self, width=250, corner_radius=0)  # Ampliar la barra lateral
-        self.sidebar_frame.pack(side="left", fill="y")
+        # Crear la barra lateral para Insertar y Actualizar a la izquierda
+        self.left_sidebar_frame = ctk.CTkFrame(self, width=250, corner_radius=0)  # Ampliar la barra lateral
+        self.left_sidebar_frame.pack(side="left", fill="y")
 
-        self.logo_label = ctk.CTkLabel(self.sidebar_frame, text="Opciones", font=("Arial", 18, "bold"))  # Aumentar el tamaño de fuente
+        self.logo_label = ctk.CTkLabel(self.left_sidebar_frame, text="Opciones", font=("Arial", 18, "bold"))  # Aumentar el tamaño de fuente
         self.logo_label.pack(pady=(20, 10))
 
-        self.insert_button = ctk.CTkButton(self.sidebar_frame, text="Insertar", command=self.insert_data)
+        self.insert_button = ctk.CTkButton(self.left_sidebar_frame, text="Insertar", command=self.insert_data)
         self.insert_button.pack(pady=10)
 
-        self.search_button = ctk.CTkButton(self.sidebar_frame, text="Buscar", command=self.open_search_dialog)
-        self.search_button.pack(pady=10)
-
-        self.update_button = ctk.CTkButton(self.sidebar_frame, text="Actualizar", command=self.update_data)
+        self.update_button = ctk.CTkButton(self.left_sidebar_frame, text="Actualizar", command=self.update_data)
         self.update_button.pack(pady=10)
 
-        # Área principal
+        # Área principal en el centro
         self.main_frame = ctk.CTkFrame(self)
-        self.main_frame.pack(side="right", fill="both", expand=True)
+        self.main_frame.pack(side="left", fill="both", expand=True)
 
         # Contenedor de datos
         self.scrollable_frame = ctk.CTkScrollableFrame(self.main_frame)
         self.scrollable_frame.pack(fill="both", expand=True, padx=20, pady=20)
 
-        # Filtro
-        self.filter_frame = ctk.CTkFrame(self, width=250, corner_radius=0)  # Ampliar el marco de filtro
-        self.filter_frame.pack(side="right", fill="y")
-        
-        self.filter_label = ctk.CTkLabel(self.filter_frame, text="Filtrar Datos", font=("Arial", 18, "bold"))  # Aumentar el tamaño de fuente
+        # Barra lateral para Buscar y Aplicar Filtros a la derecha
+        self.right_sidebar_frame = ctk.CTkFrame(self, width=250, corner_radius=0)  # Ampliar el marco de filtro
+        self.right_sidebar_frame.pack(side="right", fill="y")
+
+        self.filter_label = ctk.CTkLabel(self.right_sidebar_frame, text="Filtrar Datos", font=("Arial", 18, "bold"))  # Aumentar el tamaño de fuente
         self.filter_label.pack(pady=(20, 10))
 
-        self.filter_entry = ctk.CTkEntry(self.filter_frame, placeholder_text="Ingrese criterio")
+        self.filter_entry = ctk.CTkEntry(self.right_sidebar_frame, placeholder_text="Ingrese criterio")
         self.filter_entry.pack(pady=10)
 
-        self.apply_filter_button = ctk.CTkButton(self.filter_frame, text="Aplicar Filtro", command=self.apply_filter)
+        self.apply_filter_button = ctk.CTkButton(self.right_sidebar_frame, text="Aplicar Filtro", command=self.apply_filter)
         self.apply_filter_button.pack(pady=10)
 
-        self.clear_filter_button = ctk.CTkButton(self.filter_frame, text="Limpiar Filtro", command=self.clear_filter)
+        self.clear_filter_button = ctk.CTkButton(self.right_sidebar_frame, text="Limpiar Filtro", command=self.clear_filter)
         self.clear_filter_button.pack(pady=10)
+
+        self.search_button = ctk.CTkButton(self.right_sidebar_frame, text="Buscar", command=self.open_search_dialog)
+        self.search_button.pack(pady=10)
 
     def open_search_dialog(self):
         # Implementar el diálogo de búsqueda
@@ -106,8 +106,8 @@ class ComponentsTab(ctk.CTkFrame):
                 "mechanical_coating", "mechanical_step_link"
             ],
             "Electrical": [
-                "electrical_power_budget", "electrical_current_ps_only", "electrical_voltaje_dc",
-                "electrical_voltaje_ac", "electrical_initialization_power",
+                "electrical_power_budget", "electrical_current_ps_only", "electrical_voltage_dc",
+                "electrical_voltage_ac", "electrical_initialization_power",
                 "electrical_initialization_current", "electrical_standby_power",
                 "electrical_standby_current", "electrical_calibration_power",
                 "electrical_calibration_current", "electrical_observation_power",
@@ -116,8 +116,8 @@ class ComponentsTab(ctk.CTkFrame):
                 "electrical_ups_power_time_required_ups"
             ],
             "Thermical": [
-                "thermical_heat_dissipated", "thermical_head_load_to_air",
-                "thermical_head_load_to_coolant", "thermical_skin_temperature_above_ambient",
+                "thermical_heat_dissipated", "thermical_heat_load_to_air",
+                "thermical_heat_load_to_coolant", "thermical_skin_temperature_above_ambient",
                 "thermical_requires_cooling"
             ],
             "Cables": [
@@ -135,7 +135,6 @@ class ComponentsTab(ctk.CTkFrame):
                     formatted_text[category] += f"{field.replace('_', ' ').title()}: {data[field]}\n"
 
         return formatted_text
-
 
     def update_gui(self, data):
         # Limpiar el área principal
