@@ -1,9 +1,9 @@
 ## components.py
 
 from fastapi import APIRouter, HTTPException, status
-from API.db.models.components import components
-from API.db.schemas.components import components_schema
-from API.db.client import db_client
+from models.components import components
+from schemas.components import components_schema
+from schemas.client import db_client
 from bson import ObjectId
 
 router = APIRouter(prefix = "/components", 

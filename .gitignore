@@ -16,9 +16,11 @@ build/
 /data/raw/*
 /data/processed/*
 /notebooks/data_reduction.ipynb
+/app/db/*
 
 # Carpeta Documentación y todo su contenido
 Documentacion/
 
 # Config
 /config/config.py
+/config/mongosqld.config
