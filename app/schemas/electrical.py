@@ -1,15 +1,13 @@
-#models/electrical.py
-from pydantic import BaseModel, field_validator
+#schemas/electrical.py
+
+from pydantic import BaseModel
 from typing import Optional
 
-class Electrical(BaseModel):
-    """
-    Modelo para los datos eléctricos de un componente
-    """
+class ElectricalSchema(BaseModel):
     id: Optional[str]
-    ci_identification: str       #Clave primaria unica
+    ci_identification: str
     electrical_power_budget: float
-    electrical_current_ps_only: Optional[str]                     #Pendiente de determinar
+    electrical_current_ps_only: Optional[str]
     electrical_voltaje_dc: Optional[float]
     electrical_voltaje_ac: Optional[float]
     electrical_initialization_power: Optional[float]
@@ -22,8 +20,8 @@ class Electrical(BaseModel):
     electrical_observation_current: Optional[float]
     electrical_maintenance_power: Optional[float]
     electrical_maintenance_current: Optional[float]
-    electrical_ups_power_required: Optional[str]                       #pendiente de determinar
-    electrical_ups_power_time_required_ups: Optional[str] 
+    electrical_ups_power_required: Optional[str]
+    electrical_ups_power_time_required_ups: Optional[str]
     cables_function: Optional[str]
     cables_max_length: Optional[float]
     cables_length: Optional[float]
@@ -32,10 +30,14 @@ class Electrical(BaseModel):
     cables_min_bending_radius_static: Optional[float]
     cables_mass_density: Optional[float]
     
-    @field_validator('ci_identification')
-    def validate_ci_identification(cls, v):
-        if not v:
-            raise ValueError('ci_identification cannot be empty')
-        return v
-
-# Se pueden añadir mas validadores, como para que no haya números negativos, etc... 
+    class Config:
+        schema_extra = {
+            "example": {
+                "id": "603d2149e4b0a2b7c7d06f5d",
+                "ci_identification": "315112-0000",
+                "electrical_power_budget": 150.0,
+                "electrical_current_ps_only": "Details",
+                "electrical_voltaje_dc": 12.0,
+                "electrical_voltaje_ac": 220.0,
+            }
+        }

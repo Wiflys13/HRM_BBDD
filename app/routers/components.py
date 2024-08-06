@@ -1,43 +1,36 @@
-## components.py
-
+#routers/components.py
 from fastapi import APIRouter, HTTPException, status
-from models.components import components
-from schemas.components import components_schema
-from schemas.client import db_client
 from bson import ObjectId
+from db.session import db_client
+from models.components import Components
+from models.partnumber import PartNumber
+from models.electrical import Electrical
+from models.mechanical import Mechanical
+from models.procurement import Procurement
+from models.thermical import Thermical
+from repositories.component_repository import get_component_by_id, get_component_by_ci_identification
+import logging
+import math
 
-router = APIRouter(prefix = "/components", 
-                   tags = ["Components"], 
-                   responses={status.HTTP_404_NOT_FOUND: {"message": "No encontrado"}})
+# Configurar logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
- ### Operaciones GET ##
+router = APIRouter(prefix="/components", tags=["Components"], responses={status.HTTP_404_NOT_FOUND: {"description": "Not found"}})
 
- #GET por ID#
-@router.get("/search/id/{id}")  # Path
-async def component(id: str):
-    object_id = ObjectId(id)
-    result = search_component("_id", object_id)
+### Operaciones GET ##
+# GET por ID (para Components)
+@router.get("/{id}", response_model=Components)
+async def get_component(id: str):
+    component = get_component_by_id(id)
+    if component is None:
+        raise HTTPException(status_code=404, detail="Component not found")
+    return Components(**component)
+
+# GET por ci_identification
+@router.get("/search/ci_identification/{ci_identification}")
+async def get_component_by_ci(ci_identification: str):
+    result = get_component_by_ci_identification(ci_identification)
     if result is None:
         raise HTTPException(status_code=404, detail="Component not found")
-    
-    return result
-
-#GET por ci_identification#
-@router.get("/search/ci_identification/{ci_identification}")  # Path
-async def search_by_ci_identification(ci_identification: str):
-    result = search_component("pbs.ci_identification", ci_identification)
-    if result is None:
-        raise HTTPException(status_code=404, detail="Component not found")
-    
-    return result
-
-# Funciones
-def search_component(field: str, key):
-    try:
-        components = db_client.components.find_one({field: key})
-        if components:
-            return components_schema(components)
-        else:
-            return None
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
+    return PartNumber(**result)

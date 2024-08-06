@@ -11,7 +11,7 @@ app = FastAPI()
 # Documentación con Swagger: http://127.0.0.1:8000/docs
 # Documentación con Redocly: http://127.0.0.1:8000/redoc
 
-#Probamos que la instancia funciona
+#Definimos el mensaje en el root de la api
 @app.get("/")
 async def root():
     return "Hola Harmoni"

@@ -1,14 +1,15 @@
-#Clase componentes
+#schemas/partnumber.py
 from pydantic import BaseModel
 from typing import Optional
 
 class PartNumber(BaseModel):
-    #pbs
-    id: Optional[str]
+    """
+    Modelo para los datos de PartNumber de un componente
+    """
+    _id: Optional[str]
     ci_identification: str   
-    pbs_number: str
     pbs_name: str
-    pbs_acronym: str
+    pbs_acronym: Optional[str] = None
     pbs_level: int
     pbs_system: int
     pbs_subsystem: int
@@ -17,3 +18,4 @@ class PartNumber(BaseModel):
     pbs_assembly: int
     pbs_subassembly: int
     pbs_component: int
+    notes_and_comments: Optional[str] = None

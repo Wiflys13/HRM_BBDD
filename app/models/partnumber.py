@@ -1,8 +1,8 @@
-#models/components.py
+#models/partnumber.py
 from pydantic import BaseModel, field_validator
 from typing import Optional, Literal
 
-class Components(BaseModel):
+class PartNumber(BaseModel):
     """
     Modelo para los datos de PartNumber de un componente
     """
@@ -18,11 +18,4 @@ class Components(BaseModel):
     pbs_assembly: int
     pbs_subassembly: int
     pbs_component: int
-    pbs_is_component: Optional[bool] = None
-    component_type: Optional[Literal['', 'Optical', 'Electrical', 'Mechanical']] = ''
-    component_field: Optional[bool] = None
-    component_status: Optional[str] = None
-    component_description: Optional[str] = None
-    component_lab_tool: Optional[str] = None
-    institution_responsible: Optional[str] = None
     notes_and_comments: Optional[str] = None

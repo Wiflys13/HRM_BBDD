@@ -45,7 +45,7 @@ my_project/
 
 ### Descripción de los Directorios
 
-#### 'config/'
+#### `config/`
 
 #### `app/`
 Contiene el código principal de la aplicación FastAPI.
