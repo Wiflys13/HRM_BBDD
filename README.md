@@ -2,21 +2,40 @@
 
 La gestión y organización de la base de datos sigue la siguiente estructura:
 
+```plaintext
 my_project/
 ├── app/
-│ ├── init.py
-│ ├── main.py
-│ ├── config.py/
-│ │ ├── init.py
-│ │ └── config.py
-│ ├── models/
-│ ├── schemas/
-│ ├── repositories/
-│ ├── services/
-│ ├── routers/
-│ ├── dependencies/
-│ └── utils/
-│ └── logger.py
+│   ├── __init__.py
+│   ├── main.py
+│   ├── config/
+│   │   ├── __init__.py
+│   │   └── config.py
+│   ├── db/
+│   │   ├── session.py
+│   │   ├── base.py
+│   │   └── init_db.py
+│   ├── models/
+│   │   ├── partnumber.py
+│   │   ├── components.py
+│   │   ├── electrical.py
+│   │   ├── mechanical.py
+│   │   └── procurement.py
+│   ├── schemas/
+│   │   ├── partnumber.py
+│   │   ├── components.py
+│   │   ├── electrical.py
+│   │   ├── mechanical.py
+│   │   └── procurement.py
+│   ├── repositories/
+│   │   └── component_repository.py
+│   ├── services/
+│   │   └── component_service.py
+│   ├── routers/
+│   │   └── component_router.py
+│   ├── dependencies/
+│   │   └── database.py
+│   └── utils/
+│       └── logger.py
 ├── data/
 ├── notebooks/
 ├── GUI/
@@ -26,7 +45,6 @@ my_project/
 ### Descripción de los Directorios
 
 #### 'config/'
-Se introduce la configuración de la base de datos, los directorios con los datos... 
 
 #### `app/`
 Contiene el código principal de la aplicación FastAPI.
