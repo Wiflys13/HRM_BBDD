@@ -41,6 +41,7 @@ my_project/
 ├── GUI/
 ├── scripts/
 └── requirements.txt
+```
 
 ### Descripción de los Directorios
 
