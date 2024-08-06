@@ -19,7 +19,7 @@ class Components(BaseModel):
     pbs_subassembly: int
     pbs_component: int
     pbs_is_component: Optional[bool] = None
-    component_type: Optional[Literal['', 'Optical', 'Electrical', 'Mechanical']] = ''
+    component_type: Optional[Literal['', 'Optical', 'Electrical', 'Mechanical']] = None
     component_field: Optional[bool] = None
     component_status: Optional[str] = None
     component_description: Optional[str] = None
