@@ -29,3 +29,40 @@ async def get_component_by_ci(ci_identification: str):
     if result is None:
         raise HTTPException(status_code=404, detail="Component not found")
     return components_obsolet(**result)
+
+
+# Funciones eliminadas del components.py principal el 07/08/2024:
+# Eran funcionales antes de la modificación
+# Se reestructura la lógica para buscar componentes.
+
+@router.get("/search/id/{id}")
+async def get_component_by_id(id: str):
+    try:
+        object_id = ObjectId(id)
+        result = search_component("_id", object_id)
+        if result is None:
+            raise HTTPException(status_code=404, detail="Component not found")
+        return Components(**result)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail="Internal Server Error")
+
+
+@router.get("/search/ci_identification/{ci_identification}")
+async def get_component_by_ci(ci_identification: str):
+    try:
+        result = search_component("ci_identification", ci_identification)
+        if result is None:
+            raise HTTPException(status_code=404, detail="Component not found")
+        return Components(**result)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail="Internal Server Error")
+    
+@router.get("/search/acronynm/{pbs_acronym}")
+async def get_component_by_ci(pbs_acronym: str):
+    try:
+        result = search_component("pbs_acronym", pbs_acronym)
+        if result is None:
+            raise HTTPException(status_code=404, detail="Component not found")
+        return Components(**result)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail="Internal Server Error")

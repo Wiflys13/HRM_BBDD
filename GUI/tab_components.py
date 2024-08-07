@@ -88,9 +88,9 @@ class ComponentsTab(ctk.CTkFrame):
     def format_json_by_category(self, data):
         categories = {
             "PBS": [
-                "id", "pbs_number", "pbs_name", "pbs_acronym", "pbs_level",
+                "ci_identification", "pbs_name", "pbs_acronym", "pbs_level",
                 "pbs_system", "pbs_subsystem", "pbs_module", "pbs_unit",
-                "pbs_assembly", "pbs_subassembly", "pbs_component"
+                "pbs_assembly", "pbs_subassembly", "pbs_component", "notes_and_comments"
             ],
             "Component": [
                 "pbs_is_component", "component_status", "component_description",

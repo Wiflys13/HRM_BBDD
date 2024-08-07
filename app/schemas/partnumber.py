@@ -19,3 +19,7 @@ class PartNumber(BaseModel):
     pbs_subassembly: int
     pbs_component: int
     notes_and_comments: Optional[str] = None
+
+    # Convertir a diccionario
+    def to_dict(self):
+        return self.model_dump()
