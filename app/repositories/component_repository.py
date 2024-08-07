@@ -4,16 +4,11 @@ from bson import ObjectId
 from fastapi import APIRouter, HTTPException, status
 from models.components import Components
 from typing import Optional, Dict, Any, List
-import logging
-
-# Configurar el logger
-logging.basicConfig(level=logging.DEBUG)
-logger = logging.getLogger(__name__)
+from logs.logger import logger
 
 def search_component(field: str, key: Any, multiple: bool = False) -> Optional[List[Dict[str, Any]]]:
     try:
         logger.debug(f"Buscando componentes con {field}={key}")
-
         # Verificar el tipo de dato del campo
         if field.startswith('pbs_') and isinstance(key, str) and key.isdigit():
             key = int(key)
@@ -42,9 +37,10 @@ async def get_component_by_field(field_name: str, field_value: Any, multiple: bo
         if result is None or len(result) == 0:
             logger.debug(f"No se encontraron componentes con {field_name}={field_value}")
             raise HTTPException(status_code=404, detail="Component not found")
-        logger.debug(f"Componentes encontrados: {result}")
+        logger.debug(f"Componentes encontrados: {len(result)}")
         return [Components(**component) for component in result]
     except HTTPException as e:
+        logger.error(f"HTTPException occurred: {str(e)}")
         raise e
     except Exception as e:
         logger.error(f"Internal Server Error: {str(e)}")

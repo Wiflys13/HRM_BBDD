@@ -6,8 +6,8 @@ class Mechanical(BaseModel):
     """
     Modelo para los datos mecánicos de un componente
     """
-    id: Optional[str]
-    ci_identification: str       
+    _id: Optional[str] = None
+    ci_identification: str
     mechanical_mass: float
     mechanical_material: str
     mechanical_treatment: str

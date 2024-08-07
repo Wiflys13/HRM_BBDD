@@ -1,23 +1,18 @@
-import os
 import sys
+# Importar configuraciones desde el módulo config
+project_root = 'C:/Users/HARMONI/Documents/HARMONI/HRM_BBDD'
+sys.path.append(project_root)
+import os
 import csv
 import pymongo
 import pandas as pd
 from pymongo import MongoClient, errors
 from pydantic import ValidationError
 from typing import List
-import logging
-
-# Importar configuraciones desde el módulo config
-project_root = 'C:/Users/HARMONI/Documents/HARMONI/HRM_BBDD'
-sys.path.append(project_root)
+from app.logs.logger import logger
 from config.config import MONGODB_URI_LOCAL, MONGODB_DB_NAME_LOCAL, MONGO_DB_COLLECTION_PARTNUMBER
 from config.config import DB_CONFIG, DATA_FILE_PATH
 from app.schemas.partnumber import PartNumber
-
-# Configuración del logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
 
 def check_mongo_connection(uri: str) -> bool:
     """Verifica si se puede conectar a MongoDB."""

@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from typing import Optional
 
 class MechanicalSchema(BaseModel):
-    id: Optional[str]
+    _id: Optional[str] = None
     ci_identification: str
     mechanical_mass: float
     mechanical_material: str
@@ -12,7 +12,7 @@ class MechanicalSchema(BaseModel):
     mechanical_step_link: str
     
     class Config:
-        schema_extra = {
+        json_schema_extra  = {
             "example": {
                 "id": "603d2149e4b0a2b7c7d06f5e",
                 "ci_identification": "315111 - 0000",

@@ -4,18 +4,18 @@ from pydantic import BaseModel
 from typing import Optional
 
 class ProcurementSchema(BaseModel):
-    id: Optional[str]
+    _id: Optional[str] = None
     ci_identification: str
-    procurement_supplier: str
-    procurement_manufacturer: str
-    manufacturer_part_number: str
-    procurement_catalog_reference: str
-    procurement_cost_unit: float
-    procurement_cost_status: str
-    procurement_quantity: int
+    procurement_supplier: str = None
+    procurement_manufacturer: str = None
+    manufacturer_part_number: str = None
+    procurement_catalog_reference: str = None
+    procurement_cost_unit: float = None
+    procurement_cost_status: str = None
+    procurement_quantity: float = None
     
     class Config:
-        schema_extra = {
+        json_schema_extra  = {
             "example": {
                 "id": "603d2149e4b0a2b7c7d06f5f",
                 "ci_identification": "315111-00001",

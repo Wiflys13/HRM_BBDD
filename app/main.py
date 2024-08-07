@@ -5,6 +5,7 @@
 # Documentación con Redocly: http://127.0.0.1:8000/redoc
 from fastapi import FastAPI
 from routers import components
+from routers import combined
 
 app = FastAPI()
 
@@ -13,6 +14,7 @@ async def root():
     return "Hola Harmoni"
 
 app.include_router(components.router)
+app.include_router(combined.router)
 
 if __name__ == '__main__':
     import uvicorn

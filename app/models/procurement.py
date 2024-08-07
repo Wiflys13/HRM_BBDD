@@ -6,15 +6,15 @@ class Procurement(BaseModel):
     """
     Modelo para los datos de compras de un componente
     """
-    id: Optional[str]
+    _id: Optional[str] = None
     ci_identification: str
-    procurement_supplier: str
-    procurement_manufacturer: str
-    manufacturer_part_number: str
-    procurement_catalog_reference: str
-    procurement_cost_unit: float
-    procurement_cost_status: str
-    procurement_quantity: int
+    procurement_supplier: str = None
+    procurement_manufacturer: str = None
+    manufacturer_part_number: str = None
+    procurement_catalog_reference: str = None
+    procurement_cost_unit: float = None
+    procurement_cost_status: str = None
+    procurement_quantity: float = None
     
     @field_validator('ci_identification')
     def validate_ci_identification(cls, v):

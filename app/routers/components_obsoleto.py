@@ -2,7 +2,7 @@
 
 from fastapi import APIRouter, HTTPException, status
 from models.components import Components
-from schemas import components_obsolet
+from app.schemas import obsolet_components
 from repositories.component_repository import search_component
 from db.session import db_client
 from app.repositories import component_repository
@@ -20,7 +20,7 @@ async def get_component_by_id(id: str):
     result = search_component("_id", object_id)
     if result is None:
         raise HTTPException(status_code=404, detail="Component not found")
-    return components_obsolet(**result)
+    return obsolet_components(**result)
 
 # GET por ci_identification
 @router.get("/search/ci_identification/{ci_identification}")
@@ -28,7 +28,7 @@ async def get_component_by_ci(ci_identification: str):
     result = search_component("ci_identification", ci_identification)
     if result is None:
         raise HTTPException(status_code=404, detail="Component not found")
-    return components_obsolet(**result)
+    return obsolet_components(**result)
 
 
 # Funciones eliminadas del components.py principal el 07/08/2024:

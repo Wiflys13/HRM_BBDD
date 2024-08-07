@@ -6,13 +6,13 @@ class Thermical(BaseModel):
     """
     Modelo para los datos térmicos de un componente
     """
-    id: Optional[str]
-    ci_identification: str   #Clave primaria única
-    thermical_heat_dissipated: Optional[float]
-    thermical_head_load_to_air: Optional[float]
-    thermical_head_load_to_coolant: Optional[float]
-    thermical_skin_temperature_above_ambient: Optional[float]         #pendiente de determinar
-    thermical_requires_cooling: Optional[float]  
+    _id: Optional[str] = None
+    ci_identification: str
+    thermical_heat_dissipated: Optional[float] = None
+    thermical_head_load_to_air: Optional[float] = None
+    thermical_head_load_to_coolant: Optional[float] = None
+    thermical_skin_temperature_above_ambient: Optional[float] = None
+    thermical_requires_cooling: Optional[float] = None
 
     @field_validator('ci_identification')
     def validate_ci_identification(cls, v):
