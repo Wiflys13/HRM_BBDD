@@ -54,3 +54,48 @@
 2024-08-07 20:02:13,996 - logs.logger - DEBUG - get_component_by_field: field_name=ci_identification, field_value=315115-0001, multiple=False
 2024-08-07 20:02:13,996 - logs.logger - DEBUG - Buscando componentes con ci_identification=315115-0001
 2024-08-07 20:02:14,000 - logs.logger - DEBUG - Componentes encontrados: 1
+2024-08-07 20:03:50,556 - logs.logger - DEBUG - -----> Request received: /search/ci_identification/315115-0000
+2024-08-07 20:03:50,556 - logs.logger - DEBUG - get_component_by_field: field_name=ci_identification, field_value=315115-0000, multiple=False
+2024-08-07 20:03:50,556 - logs.logger - DEBUG - Buscando componentes con ci_identification=315115-0000
+2024-08-07 20:03:50,558 - logs.logger - DEBUG - Componentes encontrados: 1
+2024-08-07 20:03:53,343 - logs.logger - DEBUG - -----> Request received: /search/ci_identification/315115-0000
+2024-08-07 20:03:53,343 - logs.logger - DEBUG - get_component_by_field: field_name=ci_identification, field_value=315115-0000, multiple=False
+2024-08-07 20:03:53,344 - logs.logger - DEBUG - Buscando componentes con ci_identification=315115-0000
+2024-08-07 20:03:53,348 - logs.logger - DEBUG - Componentes encontrados: 1
+2024-08-07 20:06:23,619 - logs.logger - DEBUG - -----> Request received: /search/ci_identification/315115-0000
+2024-08-07 20:06:23,620 - logs.logger - DEBUG - get_component_by_field: field_name=ci_identification, field_value=315115-0000, multiple=False
+2024-08-07 20:06:23,620 - logs.logger - DEBUG - Buscando componentes con ci_identification=315115-0000
+2024-08-07 20:06:23,624 - logs.logger - DEBUG - Componentes encontrados: 1
+2024-08-07 20:06:41,354 - logs.logger - DEBUG - -----> Request received: /search/ci_identification/5
+2024-08-07 20:06:41,354 - logs.logger - DEBUG - get_component_by_field: field_name=ci_identification, field_value=5, multiple=False
+2024-08-07 20:06:41,354 - logs.logger - DEBUG - Buscando componentes con ci_identification=5
+2024-08-07 20:06:41,359 - logs.logger - DEBUG - No se encontraron componentes con ci_identification=5
+2024-08-07 20:06:41,359 - logs.logger - ERROR - HTTPException occurred: 404: Component not found
+2024-08-07 20:11:43,599 - logs.logger - DEBUG - -----> Request received: /search/ci_identification/315114-0003
+2024-08-07 20:11:43,599 - logs.logger - DEBUG - get_component_by_field: field_name=ci_identification, field_value=315114-0003, multiple=False
+2024-08-07 20:11:43,599 - logs.logger - DEBUG - Buscando componentes con ci_identification=315114-0003
+2024-08-07 20:11:43,604 - logs.logger - DEBUG - Componentes encontrados: 1
+2024-08-07 20:12:28,472 - logs.logger - DEBUG - -----> Request received: /search/acronym/CM VAM Xe
+2024-08-07 20:12:28,473 - logs.logger - DEBUG - get_component_by_field: field_name=pbs_acronym, field_value=CM VAM Xe, multiple=False
+2024-08-07 20:12:28,473 - logs.logger - DEBUG - Buscando componentes con pbs_acronym=CM VAM Xe
+2024-08-07 20:12:28,477 - logs.logger - DEBUG - Componentes encontrados: 1
+2024-08-07 20:13:08,420 - logs.logger - DEBUG - -----> Request received: /search/acronym/CM VAM Xe
+2024-08-07 20:13:08,421 - logs.logger - DEBUG - get_component_by_field: field_name=pbs_acronym, field_value=CM VAM Xe, multiple=False
+2024-08-07 20:13:08,421 - logs.logger - DEBUG - Buscando componentes con pbs_acronym=CM VAM Xe
+2024-08-07 20:13:08,426 - logs.logger - DEBUG - Componentes encontrados: 1
+2024-08-07 20:13:27,179 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-07 20:13:27,180 - logs.logger - DEBUG - get_component_by_field: field_name=pbs_module, field_value=5, multiple=True
+2024-08-07 20:13:27,181 - logs.logger - DEBUG - Buscando componentes con pbs_module=5
+2024-08-07 20:13:27,193 - logs.logger - DEBUG - Componentes encontrados: 200
+2024-08-07 20:13:58,955 - logs.logger - DEBUG - -----> Request received: /search/acronym/CM VAI Xe
+2024-08-07 20:13:58,955 - logs.logger - DEBUG - get_component_by_field: field_name=pbs_acronym, field_value=CM VAI Xe, multiple=False
+2024-08-07 20:13:58,957 - logs.logger - DEBUG - Buscando componentes con pbs_acronym=CM VAI Xe
+2024-08-07 20:13:58,961 - logs.logger - DEBUG - Componentes encontrados: 1
+2024-08-07 20:15:49,968 - logs.logger - DEBUG - -----> Request received: /search/acronym/CM VAI Xe
+2024-08-07 20:15:49,969 - logs.logger - DEBUG - get_component_by_field: field_name=pbs_acronym, field_value=CM VAI Xe, multiple=False
+2024-08-07 20:15:49,969 - logs.logger - DEBUG - Buscando componentes con pbs_acronym=CM VAI Xe
+2024-08-07 20:15:49,973 - logs.logger - DEBUG - Componentes encontrados: 1
+2024-08-07 20:16:06,147 - logs.logger - DEBUG - -----> Request received: /search/acronym/CM VAI Xe
+2024-08-07 20:16:06,147 - logs.logger - DEBUG - get_component_by_field: field_name=pbs_acronym, field_value=CM VAI Xe, multiple=False
+2024-08-07 20:16:06,148 - logs.logger - DEBUG - Buscando componentes con pbs_acronym=CM VAI Xe
+2024-08-07 20:16:06,152 - logs.logger - DEBUG - Componentes encontrados: 1

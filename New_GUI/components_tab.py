@@ -1,7 +1,9 @@
 import customtkinter as ctk
 import requests
 import urllib.parse
-from tkinter import messagebox
+from tkinter import messagebox, ttk
+import csv
+from tkinter import filedialog
 
 class ComponentsTab(ctk.CTkFrame):
     def __init__(self, master):
@@ -13,7 +15,7 @@ class ComponentsTab(ctk.CTkFrame):
         self.grid_columnconfigure(1, weight=2)  # Contenedor de búsqueda
         self.grid_columnconfigure(2, weight=4)  # Contenedor de resultados
         self.grid_rowconfigure(0, weight=0)     # Espacio para la cabecera
-        self.grid_rowconfigure(1, weight=1)     # Área principal
+        self.grid_rowconfigure(1, weight=1)     # Contenedor de búsqueda
 
         # Barra lateral de opciones
         self.left_sidebar_frame = ctk.CTkFrame(self, width=250, corner_radius=0)
@@ -32,6 +34,10 @@ class ComponentsTab(ctk.CTkFrame):
         # Botón único de búsqueda
         self.search_button = ctk.CTkButton(self.left_sidebar_frame, text="Buscar", command=self.perform_search)
         self.search_button.pack(pady=10)
+
+        # Botón de descarga CSV
+        self.download_button = ctk.CTkButton(self.left_sidebar_frame, text="Descargar CSV", command=self.download_csv)
+        self.download_button.pack(pady=10)
 
         # Contenedor de búsqueda con scrollbar
         self.search_frame = ctk.CTkFrame(self, corner_radius=0)
@@ -57,6 +63,7 @@ class ComponentsTab(ctk.CTkFrame):
         }
 
         self.entries = {}
+        self.field_labels = []
 
         for label_text, endpoint in self.fields.items():
             field_frame = ctk.CTkFrame(self.scrollable_search_frame)
@@ -68,16 +75,7 @@ class ComponentsTab(ctk.CTkFrame):
             entry = ctk.CTkEntry(field_frame, width=150, placeholder_text=f"Ingrese {label_text}")
             entry.pack(side="left", padx=5, pady=5)
             self.entries[endpoint] = entry
-
-        # Contenedor de resultados
-        self.results_frame = ctk.CTkFrame(self, corner_radius=0)
-        self.results_frame.grid(row=1, column=2, sticky="nswe")
-
-        self.results_label = ctk.CTkLabel(self.results_frame, text="Resultados", font=("Arial", 18, "bold"))
-        self.results_label.pack(pady=(20, 10))
-
-        self.scrollable_results_frame = ctk.CTkScrollableFrame(self.results_frame)
-        self.scrollable_results_frame.pack(fill="both", expand=True, padx=20, pady=20)
+            self.field_labels.append(label_text)
 
     def perform_search(self):
         # Iterar a través de los campos para determinar cuál tiene valor
@@ -97,85 +95,80 @@ class ComponentsTab(ctk.CTkFrame):
             response = requests.get(url)
             if response.status_code == 200:
                 result = response.json()
-                self.update_results(result)
+                self.show_results_in_popup(result)
             else:
                 messagebox.showerror("Error", "Componente no encontrado")
         except Exception as e:
             messagebox.showerror("Error", str(e))
 
-    def update_results(self, data):
-        # Limpiar el área de resultados
-        for widget in self.scrollable_results_frame.winfo_children():
-            widget.destroy()
+    def show_results_in_popup(self, data):
+        popup = ctk.CTkToplevel(self)
+        popup.title("Resultados de Búsqueda")
+        popup.geometry("800x600")
 
-        # Mostrar los resultados
+        # Crear un frame para el Treeview y su scrollbar horizontal
+        tree_frame = ctk.CTkFrame(popup)
+        tree_frame.pack(fill="both", expand=True, padx=10, pady=10)
+
+        # Configurar el Treeview
+        tree = ttk.Treeview(tree_frame, show="headings")
+        tree.pack(side="left", fill="both", expand=True)
+
+        # Barra de desplazamiento horizontal
+        h_scrollbar = ttk.Scrollbar(tree_frame, orient="horizontal", command=tree.xview)
+        h_scrollbar.pack(side="bottom", fill="x")
+        tree.configure(xscrollcommand=h_scrollbar.set)
+
+        # Barra de desplazamiento vertical
+        v_scrollbar = ttk.Scrollbar(tree_frame, orient="vertical", command=tree.yview)
+        v_scrollbar.pack(side="right", fill="y")
+        tree.configure(yscrollcommand=v_scrollbar.set)
+
+        # Mostrar los resultados en una tabla horizontal
         if isinstance(data, list) and data:
-            for item in data:
-                formatted_data = self.format_json_by_category(item)
-                for category, text in formatted_data.items():
-                    if text:  # Solo mostrar categorías no vacías
-                        category_frame = ctk.CTkFrame(self.scrollable_results_frame)
-                        category_frame.pack(padx=10, pady=5, fill="x")
-                        
-                        category_label = ctk.CTkLabel(category_frame, text=category, font=("Arial", 14, "bold"))
-                        category_label.pack(padx=5, pady=5, anchor="w")
-                        
-                        data_label = ctk.CTkLabel(category_frame, text=text, font=("Arial", 12))
-                        data_label.pack(padx=5, pady=5, anchor="w")
+            columns = list(data[0].keys())
+            tree["columns"] = columns
+            tree.heading("#0", text="ID")
+            for col in columns:
+                tree.heading(col, text=col.replace('_', ' ').title())
+                tree.column(col, width=100, anchor='w')  # Ajustar el ancho y alineación
+
+            for index, item in enumerate(data):
+                values = [item.get(col, "") for col in columns]
+                tree.insert("", "end", iid=index, text=index+1, values=values)
         else:
-            empty_label = ctk.CTkLabel(self.scrollable_results_frame, text="No se encontraron resultados", font=("Arial", 14))
-            empty_label.pack(padx=10, pady=10)
+            tree["columns"] = ["No se encontraron resultados"]
+            tree.heading("#0", text="")
+            tree.insert("", "end", text="No se encontraron resultados")
 
-    def format_json_by_category(self, data):
-        categories = {
-            "PBS": [
-                "ci_identification", "pbs_name", "pbs_acronym", "pbs_level",
-                "pbs_system", "pbs_subsystem", "pbs_module", "pbs_unit",
-                "pbs_assembly", "pbs_subassembly", "pbs_component", "notes_and_comments"
-            ],
-            "Component": [
-                "pbs_is_component", "component_status", "component_description",
-                "component_type", "component_field"
-            ],
-            "Procurement": [
-                "procurement_supplier", "procurement_manufacturer",
-                "manufacturer_part_number", "procurement_catalog_reference",
-                "procurement_cost_unit", "procurement_cost_status", "procurement_quantity"
-            ],
-            "Mechanical": [
-                "mechanical_mass", "mechanical_material", "mechanical_treatment",
-                "mechanical_coating", "mechanical_step_link"
-            ],
-            "Electrical": [
-                "electrical_power_budget", "electrical_current_ps_only", "electrical_voltage_dc",
-                "electrical_voltage_ac", "electrical_initialization_power",
-                "electrical_initialization_current", "electrical_standby_power",
-                "electrical_standby_current", "electrical_calibration_power",
-                "electrical_calibration_current", "electrical_observation_power",
-                "electrical_observation_current", "electrical_maintenance_power",
-                "electrical_maintenance_current", "electrical_ups_power_required",
-                "electrical_ups_power_time_required_ups"
-            ],
-            "Thermical": [
-                "thermical_heat_dissipated", "thermical_heat_load_to_air",
-                "thermical_heat_load_to_coolant", "thermical_skin_temperature_above_ambient",
-                "thermical_requires_cooling"
-            ],
-            "Cables": [
-                "cables_function", "cables_max_length", "cables_length",
-                "cables_outer_diameter", "cables_min_bending_radius_dynamic",
-                "cables_min_bending_radius_static", "cables_mass_density"
-            ]
-        }
+        # Botón de descarga CSV
+        download_button = ctk.CTkButton(popup, text="Descargar CSV", command=lambda: self.download_csv(popup, tree))
+        download_button.pack(pady=10)
 
-        formatted_text = {}
-        for category, fields in categories.items():
-            formatted_text[category] = ""
-            for field in fields:
-                if field in data:
-                    formatted_text[category] += f"{field.replace('_', ' ').title()}: {data[field]}\n"
+    def download_csv(self, popup, tree):
+        try:
+            # Abrir un cuadro de diálogo para elegir la ubicación y el nombre del archivo CSV
+            file_path = filedialog.asksaveasfilename(defaultextension=".csv",
+                                                     filetypes=[("CSV files", "*.csv"), ("All files", "*.*")])
+            if not file_path:
+                return  # Salir si el usuario cancela el diálogo
 
-        return formatted_text
+            # Escribir los datos del Treeview en el archivo CSV
+            with open(file_path, mode='w', newline='', encoding='utf-8') as file:
+                writer = csv.writer(file)
+
+                # Escribir los encabezados
+                headers = [col for col in tree["columns"]]
+                writer.writerow(headers)
+
+                # Escribir los datos
+                for item in tree.get_children():
+                    values = tree.item(item, 'values')
+                    writer.writerow(values)
+            
+            messagebox.showinfo("Éxito", "Archivo CSV descargado correctamente.")
+        except Exception as e:
+            messagebox.showerror("Error", f"Error al guardar el archivo CSV: {str(e)}")
 
     # Métodos dummy para los botones Insertar y Actualizar
     def insert_data(self):
