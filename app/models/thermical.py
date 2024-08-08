@@ -12,7 +12,7 @@ class Thermical(BaseModel):
     thermical_head_load_to_air: Optional[float] = None
     thermical_head_load_to_coolant: Optional[float] = None
     thermical_skin_temperature_above_ambient: Optional[float] = None
-    thermical_requires_cooling: Optional[float] = None
+    thermical_requires_cooling: Optional[bool] = None
 
     @field_validator('ci_identification')
     def validate_ci_identification(cls, v):

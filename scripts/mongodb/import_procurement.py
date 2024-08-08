@@ -5,6 +5,8 @@ sys.path.append(project_root)
 import os
 import csv
 import pymongo
+import pandas as pd
+import numpy as np
 from pymongo import MongoClient, errors
 from pydantic import ValidationError
 from typing import List
@@ -42,47 +44,52 @@ def validate_and_clean_data(data: List[dict]) -> List[dict]:
     return valid_data
 
 def load_procurement_to_mongo(csv_file_path: str):
-    csv_file = os.path.join(PREPROCESS_DATA_FILE_PATH, csv_file_path)
+    """Carga los datos desde un archivo CSV a MongoDB."""
+    # Verificar conexión con MongoDB
     if not check_mongo_connection(MONGODB_URI_LOCAL):
         return
     
     try:
-        client = MongoClient(MONGODB_URI_LOCAL)
-        db = client[MONGODB_DB_NAME_LOCAL]
-        collection = db['Procurement']
+        # Leer el archivo CSV usando pandas
+        csv_file = os.path.join(PREPROCESS_DATA_FILE_PATH, csv_file_path)
+        df = pd.read_csv(csv_file, encoding='latin1')
         
-        procurements = []
+        # Convertir valores nulos a None
+        df = df.replace({np.nan: None})
 
-        with open(csv_file, newline='', encoding='latin1') as csvfile:
-            reader = csv.DictReader(csvfile)
-            for row in reader:
-                try:
-                    procurement = Procurement(
-                        ci_identification=row['ci_identification'],
-                        procurement_supplier=row.get('procurement_supplier'),
-                        procurement_manufacturer=row.get('procurement_manufacturer'),
-                        manufacturer_part_number=row.get('manufacturer_part_number'),
-                        procurement_catalog_reference=row.get('procurement_catalog_reference'),
-                        procurement_cost_unit=row.get('procurement_cost_unit'),
-                        procurement_cost_status=row.get('procurement_cost_status'),
-                        procurement_quantity=row.get('procurement_quantity')
-                    )
-                    procurements.append(procurement.model_dump(exclude_unset=True))
-                except ValidationError as e:
-                    logger.warning(f"Error de validación en fila: {row}. Error: {e}")
+        # Validar y limpiar datos
+        valid_data = []
+        for index, row in df.iterrows():
+            try:
+                procurement = Procurement(
+                    ci_identification=row.get('ci_identification'),
+                    procurement_supplier=row.get('procurement_supplier'),
+                    procurement_manufacturer=row.get('procurement_manufacturer'),
+                    manufacturer_part_number=row.get('manufacturer_part_number'),
+                    procurement_catalog_reference=row.get('procurement_catalog_reference'),
+                    procurement_cost_unit=row.get('procurement_cost_unit'),
+                    procurement_cost_status=row.get('procurement_cost_status'),
+                    procurement_quantity=row.get('procurement_quantity')
+                )
+                valid_data.append(procurement.model_dump(exclude_unset=True))
+            except ValidationError as e:
+                logger.warning(f"Error de validación en fila {index}: {row}. Error: {e}")
 
-        try:
-            if procurements:
-                result = collection.insert_many(procurements, ordered=False)
+        # Insertar en MongoDB
+        if valid_data:
+            client = MongoClient(MONGODB_URI_LOCAL)
+            db = client[MONGODB_DB_NAME_LOCAL]
+            collection = db['Procurement']
+            try:
+                result = collection.insert_many(valid_data, ordered=False)
                 logger.info(f"Datos importados a la colección 'Procurement' en la base de datos '{MONGODB_DB_NAME_LOCAL}'. Se insertaron {len(result.inserted_ids)} documentos.")
-            else:
-                logger.info("No se insertaron datos debido a errores de validación.")
-        except errors.BulkWriteError as bwe:
-            logger.error(f"Error de escritura masiva: {bwe.details}")
-            return
-        
-        if not create_unique_index(collection, 'ci_identification'):
-            logger.warning("Hubo un problema al crear el índice único.")
+            except errors.BulkWriteError as bwe:
+                logger.error(f"Error de escritura masiva: {bwe.details}")
+            
+            if not create_unique_index(collection, 'ci_identification'):
+                logger.warning("Hubo un problema al crear el índice único.")
+        else:
+            logger.info("No se insertaron datos debido a errores de validación.")
         
     except Exception as e:
         logger.error(f"Error al insertar datos en MongoDB: {str(e)}")

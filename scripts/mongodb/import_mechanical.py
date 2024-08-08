@@ -5,6 +5,8 @@ sys.path.append(project_root)
 import os
 import csv
 import pymongo
+import pandas as pd
+import numpy as np
 from pymongo import MongoClient, errors
 from pydantic import ValidationError
 from typing import List
@@ -42,45 +44,50 @@ def validate_and_clean_data(data: List[dict]) -> List[dict]:
     return valid_data
 
 def load_mechanical_to_mongo(csv_file_path: str):
-    csv_file = os.path.join(PREPROCESS_DATA_FILE_PATH, csv_file_path)
+    """Carga los datos desde un archivo CSV a MongoDB."""
+    # Verificar conexión con MongoDB
     if not check_mongo_connection(MONGODB_URI_LOCAL):
         return
     
     try:
-        client = MongoClient(MONGODB_URI_LOCAL)
-        db = client[MONGODB_DB_NAME_LOCAL]
-        collection = db['Mechanical']
+        # Leer el archivo CSV usando pandas
+        csv_file = os.path.join(PREPROCESS_DATA_FILE_PATH, csv_file_path)
+        df = pd.read_csv(csv_file, encoding='latin1')
         
-        mechanicals = []
+        # Convertir valores nulos a None
+        df = df.replace({np.nan: None})
 
-        with open(csv_file, newline='', encoding='latin1') as csvfile:
-            reader = csv.DictReader(csvfile)
-            for row in reader:
-                try:
-                    mechanical = Mechanical(
-                        ci_identification=row['ci_identification'],
-                        mechanical_mass=float(row.get('mechanical_mass', 0)),
-                        mechanical_material=row.get('mechanical_material'),
-                        mechanical_treatment=row.get('mechanical_treatment'),
-                        mechanical_coating=row.get('mechanical_coating'),
-                        mechanical_step_link=row.get('mechanical_step_link')
-                    )
-                    mechanicals.append(mechanical.model_dump(exclude_unset=True))
-                except ValidationError as e:
-                    logger.warning(f"Error de validación en fila: {row}. Error: {e}")
+        # Validar y limpiar datos
+        valid_data = []
+        for index, row in df.iterrows():
+            try:
+                mechanical = Mechanical(
+                    ci_identification=row.get('ci_identification'),
+                    mechanical_mass=row.get('mechanical_mass'),
+                    mechanical_material=row.get('mechanical_material'),
+                    mechanical_treatment=row.get('mechanical_treatment'),
+                    mechanical_coating=row.get('mechanical_coating'),
+                    mechanical_step_link=row.get('mechanical_step_link')
+                )
+                valid_data.append(mechanical.model_dump(exclude_unset=True))
+            except ValidationError as e:
+                logger.warning(f"Error de validación en fila {index}: {row}. Error: {e}")
 
-        try:
-            if mechanicals:
-                result = collection.insert_many(mechanicals, ordered=False)
+        # Insertar en MongoDB
+        if valid_data:
+            client = MongoClient(MONGODB_URI_LOCAL)
+            db = client[MONGODB_DB_NAME_LOCAL]
+            collection = db['Mechanical']
+            try:
+                result = collection.insert_many(valid_data, ordered=False)
                 logger.info(f"Datos importados a la colección 'Mechanical' en la base de datos '{MONGODB_DB_NAME_LOCAL}'. Se insertaron {len(result.inserted_ids)} documentos.")
-            else:
-                logger.info("No se insertaron datos debido a errores de validación.")
-        except errors.BulkWriteError as bwe:
-            logger.error(f"Error de escritura masiva: {bwe.details}")
-            return
-        
-        if not create_unique_index(collection, 'ci_identification'):
-            logger.warning("Hubo un problema al crear el índice único.")
+            except errors.BulkWriteError as bwe:
+                logger.error(f"Error de escritura masiva: {bwe.details}")
+            
+            if not create_unique_index(collection, 'ci_identification'):
+                logger.warning("Hubo un problema al crear el índice único.")
+        else:
+            logger.info("No se insertaron datos debido a errores de validación.")
         
     except Exception as e:
         logger.error(f"Error al insertar datos en MongoDB: {str(e)}")

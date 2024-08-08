@@ -5,6 +5,8 @@ sys.path.append(project_root)
 import os
 import csv
 import pymongo
+import pandas as pd
+import numpy as np
 from pymongo import MongoClient, errors
 from pydantic import ValidationError
 from typing import List
@@ -42,45 +44,50 @@ def validate_and_clean_data(data: List[dict]) -> List[dict]:
     return valid_data
 
 def load_thermical_to_mongo(csv_file_path: str):
-    csv_file = os.path.join(PREPROCESS_DATA_FILE_PATH, csv_file_path)
+    """Carga los datos desde un archivo CSV a MongoDB."""
+    # Verificar conexión con MongoDB
     if not check_mongo_connection(MONGODB_URI_LOCAL):
         return
     
     try:
-        client = MongoClient(MONGODB_URI_LOCAL)
-        db = client[MONGODB_DB_NAME_LOCAL]
-        collection = db['Thermical']
+        # Leer el archivo CSV usando pandas
+        csv_file = os.path.join(PREPROCESS_DATA_FILE_PATH, csv_file_path)
+        df = pd.read_csv(csv_file, encoding='latin1')
         
-        thermicals = []
+        # Convertir valores nulos a None
+        df = df.replace({np.nan: None})
 
-        with open(csv_file, newline='', encoding='latin1') as csvfile:
-            reader = csv.DictReader(csvfile)
-            for row in reader:
-                try:
-                    thermical = Thermical(
-                        ci_identification=row['ci_identification'],
-                        thermical_heat_dissipated=row.get('thermical_heat_dissipated'),
-                        thermical_head_load_to_air=row.get('thermical_head_load_to_air'),
-                        thermical_head_load_to_coolant=row.get('thermical_head_load_to_coolant'),
-                        thermical_skin_temperature_above_ambient=row.get('thermical_skin_temperature_above_ambient'),
-                        thermical_requires_cooling=row.get('thermical_requires_cooling')
-                    )
-                    thermicals.append(thermical.model_dump(exclude_unset=True))
-                except ValidationError as e:
-                    logger.warning(f"Error de validación en fila: {row}. Error: {e}")
+        # Validar y limpiar datos
+        valid_data = []
+        for index, row in df.iterrows():
+            try:
+                thermical = Thermical(
+                    ci_identification=row.get('ci_identification'),
+                    thermical_heat_dissipated=row.get('thermical_heat_dissipated'),
+                    thermical_head_load_to_air=row.get('thermical_head_load_to_air'),
+                    thermical_head_load_to_coolant=row.get('thermical_head_load_to_coolant'),
+                    thermical_skin_temperature_above_ambient=row.get('thermical_skin_temperature_above_ambient'),
+                    thermical_requires_cooling=row.get('thermical_requires_cooling')
+                )
+                valid_data.append(thermical.model_dump(exclude_unset=True))
+            except ValidationError as e:
+                logger.warning(f"Error de validación en fila {index}: {row}. Error: {e}")
 
-        try:
-            if thermicals:
-                result = collection.insert_many(thermicals, ordered=False)
+        # Insertar en MongoDB
+        if valid_data:
+            client = MongoClient(MONGODB_URI_LOCAL)
+            db = client[MONGODB_DB_NAME_LOCAL]
+            collection = db['Thermical']
+            try:
+                result = collection.insert_many(valid_data, ordered=False)
                 logger.info(f"Datos importados a la colección 'Thermical' en la base de datos '{MONGODB_DB_NAME_LOCAL}'. Se insertaron {len(result.inserted_ids)} documentos.")
-            else:
-                logger.info("No se insertaron datos debido a errores de validación.")
-        except errors.BulkWriteError as bwe:
-            logger.error(f"Error de escritura masiva: {bwe.details}")
-            return
-        
-        if not create_unique_index(collection, 'ci_identification'):
-            logger.warning("Hubo un problema al crear el índice único.")
+            except errors.BulkWriteError as bwe:
+                logger.error(f"Error de escritura masiva: {bwe.details}")
+            
+            if not create_unique_index(collection, 'ci_identification'):
+                logger.warning("Hubo un problema al crear el índice único.")
+        else:
+            logger.info("No se insertaron datos debido a errores de validación.")
         
     except Exception as e:
         logger.error(f"Error al insertar datos en MongoDB: {str(e)}")

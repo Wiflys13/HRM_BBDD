@@ -2,7 +2,7 @@
 from pydantic import BaseModel
 from typing import Optional
 
-class PartNumber(BaseModel):
+class PartNumberSchema(BaseModel):
     """
     Modelo para los datos de PartNumber de un componente
     """

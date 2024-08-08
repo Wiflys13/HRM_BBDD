@@ -6,7 +6,7 @@ from typing import Optional
 class ElectricalSchema(BaseModel):
     _id: Optional[str] = None
     ci_identification: str
-    electrical_power_budget: float
+    electrical_power_budget: Optional[float] = None
     electrical_current_ps_only: Optional[float] = None
     electrical_voltaje_dc: Optional[float] = None
     electrical_voltaje_ac: Optional[float] = None

@@ -4,8 +4,8 @@
 # Documentación con Swagger: http://127.0.0.1:8000/docs
 # Documentación con Redocly: http://127.0.0.1:8000/redoc
 from fastapi import FastAPI
-from routers import components
-from routers import combined
+from routers import components, combined, electrical, mechanical
+
 
 app = FastAPI()
 
@@ -15,6 +15,9 @@ async def root():
 
 app.include_router(components.router)
 app.include_router(combined.router)
+app.include_router(electrical.router)
+app.include_router(combined.router)
+
 
 if __name__ == '__main__':
     import uvicorn

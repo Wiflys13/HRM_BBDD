@@ -10,7 +10,7 @@ class ThermicalSchema(BaseModel):
     thermical_head_load_to_air: Optional[float] = None
     thermical_head_load_to_coolant: Optional[float] = None
     thermical_skin_temperature_above_ambient: Optional[float] = None
-    thermical_requires_cooling: Optional[float] = None
+    thermical_requires_cooling: Optional[bool] = None
 
     class Config:
         json_schema_extra  = {
