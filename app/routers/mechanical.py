@@ -1,6 +1,7 @@
 from fastapi import APIRouter, status
 from logs.logger import logger
 from repositories.component_repository import get_item_by_field
+from schemas.electrical import ElectricalSchema 
 
 # Define el router
 router = APIRouter(prefix="/mechanical", tags=["Mechanical"], responses={status.HTTP_404_NOT_FOUND: {"description": "Not found"}})
