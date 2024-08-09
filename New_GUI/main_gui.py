@@ -1,3 +1,4 @@
+#main_gui.py
 import customtkinter as ctk
 from components_tab import ComponentsTab
 from documents_tab import DocumentsTab

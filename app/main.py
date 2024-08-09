@@ -4,7 +4,7 @@
 # Documentación con Swagger: http://127.0.0.1:8000/docs
 # Documentación con Redocly: http://127.0.0.1:8000/redoc
 from fastapi import FastAPI
-from routers import components, combined, electrical, mechanical
+from routers import components, combined, electrical, mechanical, advanced_search
 
 
 app = FastAPI()
@@ -17,6 +17,8 @@ app.include_router(components.router)
 app.include_router(combined.router)
 app.include_router(electrical.router)
 app.include_router(combined.router)
+app.include_router(advanced_search.advanced_search_router)
+app.include_router(mechanical.router)
 
 
 if __name__ == '__main__':

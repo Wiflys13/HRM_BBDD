@@ -98,8 +98,17 @@ async def get_component_by_field(field_name: str, field_value: Any, multiple: bo
     
 
 
-
-
+async def get_advanced_search_results(model_name: str, filters: Dict) -> List[Dict[str, Any]]:
+    try:
+        collection = getattr(db_client, model_name)
+        query = {k: v for k, v in filters.items() if v is not None}
+        results = await collection.find(query).to_list(length=100)  # Ajusta el límite según sea necesario
+        for result in results:
+            if '_id' in result:
+                result['_id'] = str(result['_id'])
+        return results
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Internal Server Error: {str(e)}")
 
 
 

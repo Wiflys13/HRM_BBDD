@@ -14522,3 +14522,131 @@ cables_function
 2024-08-08 18:47:26,635 - logs.logger - DEBUG - search_component called with model_name=electrical_initialization_power, field_name=12.0, field_value=True, multiple=False
 2024-08-08 18:47:26,635 - logs.logger - ERROR - Error in search_component: Model electrical_initialization_power is not recognized
 2024-08-08 18:47:26,635 - logs.logger - ERROR - HTTPException occurred: 500: Internal Server Error: Model electrical_initialization_power is not recognized
+2024-08-08 18:50:22,832 - logs.logger - DEBUG - -----> Request received: /search/electrical_initialization_power/12.0
+2024-08-08 18:50:22,834 - logs.logger - DEBUG - search_component called with model_name=Electrical, field_name=electrical_initialization_power, field_value=12.0, multiple=True
+2024-08-09 10:32:42,897 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 10:32:56,888 - logs.logger - DEBUG - -----> Request received: /search/ci_identification/315115-0001
+2024-08-09 10:32:56,888 - logs.logger - DEBUG - get_component_by_field: field_name=Components, field_value=ci_identification, multiple=315115-0001
+2024-08-09 10:32:56,888 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=ci_identification, field_value=315115-0001, multiple=False
+2024-08-09 10:32:56,889 - logs.logger - DEBUG - Componentes encontrados: 1
+2024-08-09 11:50:24,308 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 11:51:33,831 - logs.logger - DEBUG - -----> Request received: /search/electrical_current_ps_only/0.5
+2024-08-09 11:51:33,832 - logs.logger - DEBUG - search_component called with model_name=Electrical, field_name=electrical_current_ps_only, field_value=0.5, multiple=True
+2024-08-09 11:53:55,492 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 11:53:55,493 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 11:58:12,926 - app.logs.logger - INFO - Conexión establecida a MongoDB.
+2024-08-09 11:58:12,989 - app.logs.logger - INFO - Datos importados a la colección 'PartNumber' en la base de datos 'harmoni_db'. Se insertaron 527 documentos.
+2024-08-09 11:58:13,027 - app.logs.logger - INFO - Índice único creado en el campo 'ci_identification'.
+2024-08-09 12:08:14,979 - logs.logger - DEBUG - -----> Request received: /search/ci_identification/315115-0001
+2024-08-09 12:08:14,981 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=ci_identification, field_value=315115-0001, multiple=False
+2024-08-09 12:08:24,800 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 12:08:24,800 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 12:08:41,348 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 12:08:41,348 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 12:08:58,109 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 12:08:58,110 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 12:19:31,590 - logs.logger - DEBUG - -----> Request received: /advanced_search with multiple criteria
+2024-08-09 12:19:40,237 - logs.logger - DEBUG - -----> Request received: /advanced_search with multiple criteria
+2024-08-09 12:19:53,215 - logs.logger - DEBUG - -----> Request received: /advanced_search with multiple criteria
+2024-08-09 12:21:26,670 - logs.logger - DEBUG - -----> Request received: /advanced_search with multiple criteria
+2024-08-09 12:21:30,654 - logs.logger - DEBUG - -----> Request received: /advanced_search with multiple criteria
+2024-08-09 12:25:55,539 - logs.logger - DEBUG - -----> Request received: /search/acronym/CM
+2024-08-09 12:25:55,540 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_acronym, field_value=CM, multiple=True
+2024-08-09 12:26:12,313 - logs.logger - DEBUG - -----> Request received: /search/acronym/CM
+2024-08-09 12:26:12,314 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_acronym, field_value=CM, multiple=True
+2024-08-09 12:26:25,095 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 12:26:25,095 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 12:26:35,963 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 12:26:35,964 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 12:28:53,622 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 12:28:53,623 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 12:29:03,854 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 12:29:03,854 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 12:36:35,937 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 12:36:35,940 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 12:36:44,951 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 12:36:44,952 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 12:37:40,483 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 12:37:40,483 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 12:37:51,127 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 12:37:51,127 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 12:41:41,335 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 12:41:41,336 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 12:41:48,469 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 12:41:48,470 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 12:43:43,995 - logs.logger - DEBUG - -----> Request received: /search/system/3
+2024-08-09 12:43:43,997 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_system, field_value=3, multiple=True
+2024-08-09 12:45:25,445 - logs.logger - DEBUG - -----> Request received: /search/system/5
+2024-08-09 12:45:25,446 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_system, field_value=5, multiple=True
+2024-08-09 12:45:30,729 - logs.logger - DEBUG - -----> Request received: /search/system/3
+2024-08-09 12:45:30,729 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_system, field_value=3, multiple=True
+2024-08-09 12:45:53,119 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 12:45:53,120 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 12:46:03,680 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 12:46:03,680 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 12:47:22,051 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 12:47:22,051 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 12:48:25,677 - logs.logger - DEBUG - -----> Request received: /search/ci_identification/315113-0000
+2024-08-09 12:48:25,678 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=ci_identification, field_value=315113-0000, multiple=False
+2024-08-09 12:51:31,207 - logs.logger - DEBUG - -----> Request received: /search/ci_identification/315113-0000
+2024-08-09 12:51:31,207 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=ci_identification, field_value=315113-0000, multiple=False
+2024-08-09 12:51:43,955 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 12:51:43,955 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 12:52:06,707 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 12:52:06,708 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 12:52:16,031 - logs.logger - DEBUG - -----> Request received: /search/module/11
+2024-08-09 12:52:16,032 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=11, multiple=True
+2024-08-09 12:52:21,850 - logs.logger - DEBUG - -----> Request received: /search/module/av
+2024-08-09 12:52:21,850 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=av, multiple=True
+2024-08-09 12:54:32,973 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 12:54:32,974 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 12:56:20,781 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 12:56:20,782 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 12:58:26,985 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 12:58:26,986 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 12:59:24,775 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 12:59:24,775 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 13:00:39,077 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 13:00:39,078 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 13:02:31,169 - logs.logger - DEBUG - -----> Request received: /search/ci_identification/315113-0000
+2024-08-09 13:02:31,170 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=ci_identification, field_value=315113-0000, multiple=False
+2024-08-09 13:02:37,710 - logs.logger - DEBUG - -----> Request received: /search/ci_identification/315113-0000
+2024-08-09 13:02:37,711 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=ci_identification, field_value=315113-0000, multiple=False
+2024-08-09 13:02:48,151 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 13:02:48,153 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 13:08:01,776 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 13:08:01,777 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 13:09:18,667 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 13:09:18,667 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 13:10:01,606 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 13:10:01,607 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 13:12:20,657 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 13:12:20,657 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 13:16:40,548 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 13:16:40,549 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 13:20:34,922 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 13:20:34,923 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 13:21:46,352 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 13:21:46,352 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 13:22:50,209 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 13:22:50,209 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 13:24:16,031 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 13:24:16,031 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 13:25:01,941 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 13:25:01,942 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 13:26:41,261 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 13:26:41,262 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 13:27:47,852 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 13:27:47,852 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 13:28:14,887 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 13:28:14,888 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 13:29:19,327 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 13:29:19,328 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 13:30:14,097 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 13:30:14,097 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 13:31:27,723 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 13:31:27,723 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 13:34:01,491 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 13:34:01,491 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True
+2024-08-09 13:37:13,206 - logs.logger - DEBUG - -----> Request received: /search/module/5
+2024-08-09 13:37:13,206 - logs.logger - DEBUG - search_component called with model_name=Components, field_name=pbs_module, field_value=5, multiple=True

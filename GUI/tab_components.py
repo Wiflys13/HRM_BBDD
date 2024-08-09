@@ -1,3 +1,4 @@
+#tab_components.py
 import customtkinter as ctk
 import requests
 import urllib.parse

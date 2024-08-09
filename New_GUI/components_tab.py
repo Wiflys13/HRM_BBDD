@@ -1,9 +1,12 @@
+#components_tab.py
+import csv
+import pandas as pd
+import numpy as np
 import customtkinter as ctk
 import requests
 import urllib.parse
 from tkinter import messagebox, ttk
-import csv
-from tkinter import filedialog
+from tkinter import filedialog, messagebox
 
 class ComponentsTab(ctk.CTkFrame):
     def __init__(self, master):
@@ -102,9 +105,13 @@ class ComponentsTab(ctk.CTkFrame):
             messagebox.showerror("Error", str(e))
 
     def show_results_in_popup(self, data):
+        # Crear el popup
         popup = ctk.CTkToplevel(self)
         popup.title("Resultados de Búsqueda")
         popup.geometry("800x600")
+        
+        # Asegúrate de que el popup siempre esté encima
+        popup.attributes("-topmost", True)
 
         # Crear un frame para el Treeview y su scrollbar horizontal
         tree_frame = ctk.CTkFrame(popup)
@@ -145,30 +152,46 @@ class ComponentsTab(ctk.CTkFrame):
         download_button = ctk.CTkButton(popup, text="Descargar CSV", command=lambda: self.download_csv(popup, tree))
         download_button.pack(pady=10)
 
+        # Configurar el popup para que siempre esté encima
+        popup.lift()  # Eleva el popup sobre otras ventanas
+        popup.focus_force()  # Fuerza el foco en el popup
+
     def download_csv(self, popup, tree):
         try:
+            # Lleva el popup de resultados al frente para asegurarse de que no se minimice
+            popup.lift()
+            popup.attributes("-topmost", True)
+            popup.attributes("-topmost", False)  # Restaurar el estado original
+
             # Abrir un cuadro de diálogo para elegir la ubicación y el nombre del archivo CSV
             file_path = filedialog.asksaveasfilename(defaultextension=".csv",
-                                                     filetypes=[("CSV files", "*.csv"), ("All files", "*.*")])
+                                                    filetypes=[("CSV files", "*.csv"), ("All files", "*.*")])
             if not file_path:
                 return  # Salir si el usuario cancela el diálogo
 
-            # Escribir los datos del Treeview en el archivo CSV
-            with open(file_path, mode='w', newline='', encoding='utf-8') as file:
-                writer = csv.writer(file)
+            # Extraer los datos del Treeview
+            data = []
+            headers = [col for col in tree["columns"]]
 
-                # Escribir los encabezados
-                headers = [col for col in tree["columns"]]
-                writer.writerow(headers)
+            for item in tree.get_children():
+                values = tree.item(item, 'values')
+                # Convertir valores None a NaN
+                row = [value if value is not None else pd.NA for value in values]
+                data.append(row)
 
-                # Escribir los datos
-                for item in tree.get_children():
-                    values = tree.item(item, 'values')
-                    writer.writerow(values)
-            
-            messagebox.showinfo("Éxito", "Archivo CSV descargado correctamente.")
+            # Crear un DataFrame de pandas
+            df = pd.DataFrame(data, columns=headers)
+
+            # Escribir el DataFrame en un archivo CSV
+            df.to_csv(file_path, index=False, encoding='utf-8')
+
+            # Mostrar mensaje de éxito después de que el cuadro de diálogo de descarga se cierre
+            popup.after(100, lambda: messagebox.showinfo("Éxito", "Archivo CSV descargado correctamente."))
         except Exception as e:
-            messagebox.showerror("Error", f"Error al guardar el archivo CSV: {str(e)}")
+            # Mostrar mensaje de error después de que el cuadro de diálogo de descarga se cierre
+            popup.after(100, lambda: messagebox.showerror("Error", f"Error al guardar el archivo CSV: {str(e)}"))
+
+
 
     # Métodos dummy para los botones Insertar y Actualizar
     def insert_data(self):

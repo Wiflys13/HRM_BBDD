@@ -1,3 +1,4 @@
+#import_electrical.py
 import sys
 # Importar configuraciones desde el módulo config
 project_root = 'C:/Users/HARMONI/Documents/HARMONI/HRM_BBDD'
